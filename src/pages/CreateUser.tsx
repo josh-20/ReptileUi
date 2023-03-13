@@ -14,7 +14,7 @@ export const CreateUser = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     async function saveUser() {
-      const res = await fetch("http://localhost:3000/", {
+      const res = await fetch(`${import.meta.env.SERVER_URL}/`, {
         method: "post",
         headers: {
           "Content-Type": "application/json"
@@ -26,20 +26,21 @@ export const CreateUser = () => {
           password: password
         })
       });
-      return (res)
+      const {user} = await res.json() 
+      setUser(user);
     }
 
 
     return(
       <div>
         <h2>Create User</h2>
-        <p>FirstName</p>
+        <li>FirstName</li>
         <input type="text" placeholder="Text" onChange={e => setFristName(e.target.value)}/>
-        <p>LastName</p>
+        <li>LastName</li>
         <input type="text" placeholder="Text" onChange={e => setLastName(e.target.value)}/>
-        <p>Email</p>
+        <li>Email</li>
         <input type="text" placeholder="Text" onChange={e => setEmail(e.target.value)}/>
-        <p>Password</p>
+        <li>Password</li>
         <input type="password" placeholder="Text" onChange={e => setPassword(e.target.value)}/>
         <br/>
         <button onClick={saveUser}>CreateUser</button>
