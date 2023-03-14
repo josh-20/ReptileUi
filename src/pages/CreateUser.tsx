@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 type user = {
     id: number,
@@ -14,7 +14,7 @@ export const CreateUser = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     async function saveUser() {
-      const res = await fetch(`${import.meta.env.SERVER_URL}/`, {
+      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/`, {
         method: "post",
         headers: {
           "Content-Type": "application/json"
@@ -28,6 +28,7 @@ export const CreateUser = () => {
       });
       const {user} = await res.json() 
       setUser(user);
+      console.log(user)
     }
 
 
