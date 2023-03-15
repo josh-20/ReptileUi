@@ -29,9 +29,7 @@ const router = createBrowserRouter([
 ])
 
 export const App = () => {
-  const [api, setApi] = useState(new Api())
-
-  
+  const [api, setApi] = useState(new Api()) 
   return (
     <>
       <ApiContext.Provider value={api}>
