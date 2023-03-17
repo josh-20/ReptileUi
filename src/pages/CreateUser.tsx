@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 export const CreateUser = () => {
@@ -15,13 +15,12 @@ export const CreateUser = () => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password
+        firstName,
+        lastName,
+        email,
+        password
       })
     });
-    const resultBody = await res.json();
     navigate("/signin",{replace: true}); 
   }
 
