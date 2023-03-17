@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
-type user = {
-    id: number,
-    firstName: string,
-    lastName: string,
-    email: string,
-}
 
 export const CreateUser = () => {
-    const [user, setUser] = useState<user>()
     const [firstName, setFristName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -26,25 +20,32 @@ export const CreateUser = () => {
           password: password
         })
       });
-      const {user} = await res.json() 
-      setUser(user);
-      console.log(user)
+      const resultBody = await res.json() 
+      console.log(resultBody)
     }
 
 
     return(
-      <div>
+      <form>
         <h2>Create User</h2>
-        <li>FirstName</li>
-        <input type="text" placeholder="Text" onChange={e => setFristName(e.target.value)}/>
-        <li>LastName</li>
-        <input type="text" placeholder="Text" onChange={e => setLastName(e.target.value)}/>
-        <li>Email</li>
-        <input type="text" placeholder="Text" onChange={e => setEmail(e.target.value)}/>
-        <li>Password</li>
-        <input type="password" placeholder="Text" onChange={e => setPassword(e.target.value)}/>
+        <label>
+          FirstName
+          <input type="text" value={firstName} placeholder="Text" onChange={e => setFristName(e.target.value)}/>
+        </label>
+        <label>
+          LastName
+          <input type="text" value={lastName} placeholder="Text" onChange={e => setLastName(e.target.value)}/>
+        </label>
+        <label>
+          Email
+          <input type="text" value={email} placeholder="Text" onChange={e => setEmail(e.target.value)}/>
+        </label>
+        <label>
+          Password
+          <input type="password" value={password} placeholder="Text" onChange={e => setPassword(e.target.value)}/>
+        </label>
         <br/>
-        <button onClick={saveUser}>CreateUser</button>
-      </div>
+        <button type="button" onClick={saveUser}>CreateUser</button>
+      </form>
     )
 }
