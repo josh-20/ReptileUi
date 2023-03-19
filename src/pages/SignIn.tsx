@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './Signin.css';
 
 export const SignIn = () => {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ export const SignIn = () => {
         console.log(res.text())
     }
     return(
-        <form className="signin-form">
+        <form className="sigin-form">
             <label>
                 Email
                 <input type="email" onChange={e => setEmail(e.target.value)}/>

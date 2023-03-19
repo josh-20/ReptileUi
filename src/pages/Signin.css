@@ -1,0 +1,17 @@
+.sigin-form {
+    display: flex;
+    background-color: beige;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 72px;
+    max-width: 1080px;  
+  }
+  .signin-form input {
+    display: block;
+  }
+  .sigin-form button {
+    display: block;
+    width: fit-content;
+  }

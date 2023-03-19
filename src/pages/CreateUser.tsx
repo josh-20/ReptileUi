@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import  './CreateUser.css';
 
 export const CreateUser = () => {
   const navigate = useNavigate();
@@ -27,25 +27,26 @@ export const CreateUser = () => {
 
   return(
     <form className="signup-form">
+     
       <h2>Create User</h2>
       <label>
         FirstName
-        <input type="text" value={firstName} placeholder="Text" onChange={e => setFristName(e.target.value)}/>
+        <input type="text" value={firstName} onChange={e => setFristName(e.target.value)}/>
       </label>
       <label>
         LastName
-        <input type="text" value={lastName} placeholder="Text" onChange={e => setLastName(e.target.value)}/>
+        <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
       </label>
       <label>
         Email
-        <input type="email" value={email} placeholder="Text" onChange={e => setEmail(e.target.value)}/>
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
       </label>
       <label>
         Password
-        <input type="password" value={password} placeholder="Text" onChange={e => setPassword(e.target.value)}/>
+        <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
       </label>
-      <br/>
       <button type="button" onClick={saveUser}>CreateUser</button>
+   
     </form>
   )
 }
