@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import  './CreateUser.css';
 
@@ -24,10 +24,8 @@ export const CreateUser = () => {
     navigate("/signin",{replace: true}); 
   }
 
-
   return(
     <form className="signup-form">
-     
       <h2>Create User</h2>
       <label>
         FirstName

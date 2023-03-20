@@ -7,6 +7,7 @@ max-width: 1280px;
   display: flex;
   min-width: 320px;
   max-width: 1920px;
+  background-color: #242424;
 
 }
 body {
@@ -20,7 +21,7 @@ body {
   }
 .signup-form {
     display: flex;
-    background-color: beige;
+    background-color: #eee;
     margin: 0;
     padding: 2rem;
     justify-content: center;
