@@ -1,0 +1,24 @@
+.home-nav {
+    display: flex;
+    background-color: #242424;
+}
+
+.home-nav button {
+    display: block;
+    padding: 5px;
+    transition-duration: 0.4ms;
+}
+.home-nav button:hover {
+    background-color: #eee;
+    color: gray;
+}
+.home-div {
+    display: flex;
+    background-color: #242424;
+    align-items: baseline;
+    flex-direction: column;
+}
+.home-div div {
+    display: block;
+    background-color:#eee;
+}

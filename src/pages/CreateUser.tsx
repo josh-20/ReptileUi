@@ -43,8 +43,11 @@ export const CreateUser = () => {
         Password
         <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
       </label>
-      <button type="button" onClick={saveUser}>CreateUser</button>
-   
+      <div>
+
+        <button type="button" onClick={saveUser}>CreateUser</button>
+        <button type="button" onClick={() => {navigate("/signin", {replace: true})}}>SignIn</button> 
+      </div>
     </form>
   )
 }

@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react'
-import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom"
-import { SignIn } from './pages/SignIn'
-import { Reptile } from './pages/Reptile'
-import { User } from './pages/User'
-import { CreateUser } from './pages/CreateUser'
+import { useState, useEffect } from 'react';
+import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import { SignIn } from './pages/SignIn';
+import { Reptile } from './pages/Reptile';
+import { CreateUser } from './pages/CreateUser';
+import { HomePage } from './pages/Homepage';
+
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <CreateUser />
+    element: <HomePage />
   },
   {
     path: '/signin',
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
   {
     path: '/reptile',
     element: <Reptile />
-  }])
+  },
+  {
+    path: "/createUser",
+    element: <CreateUser />
+  }
+])
 
 export const App = () => {
   return (

@@ -34,7 +34,6 @@ body {
     display: block;
   }
   .signup-form button {
-    display:  block;
     width: fit-content;
     margin: 5px;
   }
