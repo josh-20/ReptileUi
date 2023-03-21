@@ -1,6 +1,8 @@
 .home-nav {
     display: flex;
     background-color: #242424;
+    width: 100vw;
+    padding: 5px;
 }
 
 .home-nav button {
@@ -18,7 +20,19 @@
     align-items: baseline;
     flex-direction: column;
 }
-.home-div div {
-    display: block;
-    background-color:#eee;
+.Nav-div {
+    background-color: #242424;
+}
+hr {
+    color: #eee;
+    width: 100vw;
+}
+h1 {
+    color: #eee;
+    padding: 5px;
+}
+p {
+    color: #eee;
+    font-size: large;
+    padding: 5px;
 }

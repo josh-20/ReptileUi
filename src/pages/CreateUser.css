@@ -21,6 +21,7 @@ body {
   }
 .signup-form {
     display: flex;
+    width: 100vw;
     background-color: #eee;
     margin: 0;
     padding: 2rem;
@@ -35,7 +36,15 @@ body {
   }
   .signup-form button {
     width: fit-content;
+    padding: 5px;
     margin: 5px;
+    transition-duration: 0.4ms;
   }
+
+  .signup-form button:hover {
+    background-color: #eee;
+    color: gray;
+  }
+
   
   

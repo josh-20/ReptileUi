@@ -22,12 +22,13 @@ export const SignIn = () => {
     }
     return(
         <form className="sigin-form">
+            <h1>Sign In</h1>
             <label>
-                Email
+                Email: 
                 <input type="email" onChange={e => setEmail(e.target.value)}/>
             </label>
             <label>
-                Password
+                Password: 
                 <input type="password" onChange={e => setPassword(e.target.value)} />
             </label>
             <button type="button" onClick={login}>Sign in</button>
