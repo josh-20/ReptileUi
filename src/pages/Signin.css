@@ -17,3 +17,6 @@
     display: block;
     width: fit-content;
   }
+  h1 {
+    color: black;
+  }
