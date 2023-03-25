@@ -4,6 +4,7 @@ import { SignIn } from './pages/SignIn';
 import { Reptile } from './pages/Reptile';
 import { CreateUser } from './pages/CreateUser';
 import { HomePage } from './pages/Homepage';
+import { Dashboard } from './pages/Dashboard';
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/createUser",
     element: <CreateUser />
+  },
+  {
+    path: "/dash",
+    element: <Dashboard />
   }
 ])
 
