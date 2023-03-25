@@ -1,14 +1,20 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
+import { Schedules } from './Schedules';
+import { Reptile } from './Reptile';
+
 
 interface Reptile {
   id: number,
   species: string,
   name: string,
   sex: string,
+  schedule: []
 }
 interface Schedule {
+  id: number,
   type: string,
   description: string,
   monday: boolean,
@@ -25,6 +31,7 @@ interface Schedule {
 export const Dashboard: React.FC = () => {
   const [reptiles, setReptiles] = useState<Reptile[]>([]);
   const [schedules, setSchedules] = useState<Schedule[]>([]);
+  const navigate = useNavigate();
   async function handleDelete (id: number){
     const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/delrep`, {
       method: "delete",
@@ -36,6 +43,10 @@ export const Dashboard: React.FC = () => {
       })
     });
     setReptiles((reptiles) => reptiles.filter((reptiles) => reptiles.id != id))
+    setSchedules([...schedules]);
+  }
+  function handleSelect(id: number) {
+    navigate(`/reptile/${id}`, {replace: true});
   }
 
   useEffect(() => {
@@ -63,6 +74,7 @@ export const Dashboard: React.FC = () => {
               <div className="reptile" key={reptile.id}>
                 {reptile.name}
                 <button className="delete-button" onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+                <button onClick={() => {handleSelect(reptile.id)}}>Select</button>
               </div>
             ))
           }
@@ -76,6 +88,7 @@ export const Dashboard: React.FC = () => {
             ))
           }
         </div>
+
       </div>
     </div>
   );

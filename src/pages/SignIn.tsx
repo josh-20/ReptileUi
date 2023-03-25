@@ -18,7 +18,7 @@ export const SignIn = () => {
                 password
             })
         });
-        navigate("/dash", {replace: true})
+        navigate("/dash/:", {replace: true})
     }
     return(
         <form className="signin-form">
