@@ -26,27 +26,27 @@ export const CreateUser = () => {
 
   return(
     <form className="signup-form">
-      <h2>Create User</h2>
+      <h2 className="form-title">Sign Up</h2>
       <label>
-        FirstName
-        <input type="text" value={firstName} onChange={e => setFristName(e.target.value)}/>
+        <h4 id="first-name" >FirstName</h4>
+        <input className="input-box" type="text" value={firstName} onChange={e => setFristName(e.target.value)}/>
       </label>
       <label>
-        LastName
-        <input type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
+        <h4 id="last-name">LastName</h4>
+        <input className="input-box" type="text" value={lastName} onChange={e => setLastName(e.target.value)}/>
       </label>
       <label>
-        Email
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
+        <h4 id="email">Email</h4>
+        <input className="input-box" type="email" value={email} onChange={e => setEmail(e.target.value)}/>
       </label>
       <label>
-        Password
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+        <h4 id="password">Password</h4>
+        <input className="input-box" type="password" value={password} onChange={e => setPassword(e.target.value)}/>
       </label>
       <div>
 
-        <button type="button" onClick={saveUser}>CreateUser</button>
-        <button type="button" onClick={() => {navigate("/signin", {replace: true})}}>SignIn</button> 
+        <button className="button" id="button" type="button" onClick={saveUser}>CreateUser</button>
+        <button className="button" id="button" type="button" onClick={() => {navigate("/signin", {replace: true})}}>SignIn</button> 
       </div>
     </form>
   )

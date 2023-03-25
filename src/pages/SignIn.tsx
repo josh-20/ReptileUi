@@ -24,15 +24,15 @@ export const SignIn = () => {
         <form className="signin-form">
             <h1 className="title">Sign in</h1>
             <label>
-                Email: 
+                <h4 id="email" >Email:</h4> 
                 <input type="email" onChange={e => setEmail(e.target.value)}/>
             </label>
             <label>
-                Password: 
+                <h4 id="password">Password:</h4> 
                 <input type="password" onChange={e => setPassword(e.target.value)} />
             </label>
-            <button type="button" onClick={login}>Sign in</button>
-            <button onClick={() => {navigate("/createUser",{replace: true})}}>Create User</button>
+            <button className="button" id="button" type="button" onClick={login}>Sign in</button>
+            <button className="button" id="button" onClick={() => {navigate("/createUser",{replace: true})}}>Sign Up</button>
         </form>
         )
     }
