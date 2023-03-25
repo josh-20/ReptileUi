@@ -1,27 +1,79 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
+import { Schedules } from './Schedules';
+
+interface Reptile {
+  id: number,
+  species: string,
+  name: string,
+  sex: string,
+}
+interface Schedule {
+  type: string,
+  description: string,
+  monday: boolean,
+  tuesday: boolean,
+  wednesday: boolean,
+  thursday: boolean,
+  friday:  boolean,
+  saturday: boolean,
+  sunday:  boolean,
+}
+
 
 export const Dashboard: React.FC = () => {
+  const [reptiles, setReptiles] = useState<Reptile[]>([]);
+  const [schedules, setSchedules] = useState<Schedule[]>([]);
+  async function handleDelete (id: number){
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/delrep`, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: id,
+      })
+    });
+    setReptiles((reptiles) => reptiles.filter((reptiles) => reptiles.id != id))
+  }
+
+  useEffect(() => {
+    const fetchAll = async () => {
+      const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
+      console.log(resRep);
+      const {reptiles} = await resRep.json();
+      setReptiles(reptiles);
+
+      const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/scheduleuser`);
+      const {schedules} = await resSchedule.json();
+      setSchedules(schedules); 
+    }
+    fetchAll();
+
+  },[])
+  
   return (
-    <body>
-      <div className='header-container'>
-      <h1 className="header" >Reptile Husbandry Dashboard</h1>
+    <div>
+      <h1>Dashboard</h1>
+      <div>
+        {
+          reptiles.map((reptile) => (
+            <div key={reptile.id}>
+               {reptile.name}
+              <button onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+            </div>
+          ))
+        }
       </div>
-      <ul className="container">
-        <h3 className='content' id="padder">Welcome fellow snake enthusiast! If you have aquired a new scaly pet, please click the red link just below!</h3>
-        <li id="reptile">
-          <a className="link" href="/Reptile">Click Here To Add a Snake</a>
-        </li>
-        <h3 className='content'>If you want to create a husbandry record to keep track of your slithering reptiles size, click below!</h3>
-        <li id="husbandry">
-          <a className="link" href="/husbandryRecords">Click Here To Add a Husbandry Record</a>
-        </li>
-        <h3 className='content'> If you want to add a feeding schedule, click right down here!</h3>
-        <li id="schedule">
-          <a className="link" href="/Schedules">Click Here To Add a Schedule</a>
-        </li>
-        
-      </ul>
-      <div className="footer"></div>
-    </body>
+      <div>
+        {
+          schedules.map((schedule) => (
+            <div>
+              {schedule.description}
+            </div>
+          ))
+        }
+      </div>
+    </div>
   );
 };
