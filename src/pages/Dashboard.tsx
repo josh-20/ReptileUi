@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Schedules } from './Schedules';
+import './Dashboard.css';
 
 interface Reptile {
   id: number,
@@ -19,6 +19,7 @@ interface Schedule {
   saturday: boolean,
   sunday:  boolean,
 }
+
 
 
 export const Dashboard: React.FC = () => {
@@ -54,25 +55,27 @@ export const Dashboard: React.FC = () => {
   
   return (
     <div>
-      <h1>Dashboard</h1>
-      <div>
-        {
-          reptiles.map((reptile) => (
-            <div key={reptile.id}>
-               {reptile.name}
-              <button onClick={() => {handleDelete(reptile.id)}}>Delete</button>
-            </div>
-          ))
-        }
-      </div>
-      <div>
-        {
-          schedules.map((schedule) => (
-            <div>
-              {schedule.description}
-            </div>
-          ))
-        }
+      <h1 className='dashboard-label'>Dashboard</h1>
+      <div className='container'>
+        <div className='reptile-ctn'>
+          {
+            reptiles.map((reptile) => (
+              <div className="reptile" key={reptile.id}>
+                {reptile.name}
+                <button className="delete-button" onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+              </div>
+            ))
+          }
+        </div>
+        <div className='schedule-ctn'>
+          {
+            schedules.map((schedule) => (
+              <div className='schedule'>
+                {schedule.description}
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   );
