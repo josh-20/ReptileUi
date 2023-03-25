@@ -46,11 +46,15 @@ export const Dashboard: React.FC = () => {
   function handleSelect(id: number) {
     navigate(`/reptile/${id}`, {replace: true});
   }
+
   async function handleLogout () {
     await fetch(`${import.meta.env.VITE_SERVER_URL}/logout`, {
       method: "post"
     });
     navigate("/signin", {replace: true})
+
+  function handleSelect(id: number) {
+    navigate(`/reptile/${id}`, {replace: true});
   }
 
   useEffect(() => {
