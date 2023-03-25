@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import './Dashboard.css';
 import { useNavigate } from 'react-router-dom';
-import { Schedules } from './Schedules';
 import { Reptile } from './Reptile';
+
 
 interface Reptile {
   id: number,
@@ -12,6 +13,7 @@ interface Reptile {
   schedule: []
 }
 interface Schedule {
+  reptileId: number,
   id: number,
   type: string,
   description: string,
@@ -23,6 +25,7 @@ interface Schedule {
   saturday: boolean,
   sunday:  boolean,
 }
+
 
 
 export const Dashboard: React.FC = () => {
@@ -57,6 +60,7 @@ export const Dashboard: React.FC = () => {
     navigate(`/reptile/${id}`, {replace: true});
   }
 
+
   useEffect(() => {
     const fetchAll = async () => {
       const weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
@@ -83,29 +87,40 @@ export const Dashboard: React.FC = () => {
   
   return (
     <div>
-      <h1>Dashboard</h1>
-      <button onClick={handleLogout}>Logout</button>
-      <div>
-        {
-          reptiles.map((reptile) => (
-            <div key={reptile.id}>
-               {reptile.name}
-              <button onClick={() => {handleDelete(reptile.id)}}>Delete</button>
-              <button onClick={() => {handleSelect(reptile.id)}}>Select</button>
-            </div>
-          ))
-        }
+
+      <h1 className='dashboard-label'>Dashboard</h1>
+      <div id='container'>
+      <div className="label-container">
+        <div className='name'>
+          Name
+        </div>
+        <div className='spacer'></div>
+        <div className='schedule'>
+          Schedule
+        </div>
       </div>
-      <div>
-        {
-          schedules != undefined &&
-          schedules.map((schedule) => (
-            <div key={schedule.id}>
-              {schedule.description}
+      {reptiles.map((reptile) => (
+        <div className='reptile' key={reptile.id}>
+          <div className='reptile-info'>
+            <div className='reptile-name'>
+              {reptile.name}
+
             </div>
-          ))
-        }
-      </div>
+            <div className='reptile-buttons'>
+              <button className="button"onClick={() => {handleSelect(reptile.id)}}>Select</button>
+              <button className='button' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+            </div>
+          </div>
+          <div className='schedule-row'>
+            {schedules.filter((schedule) => schedule.reptileId === reptile.id).map((schedule) => (
+              <div className='schedule' key={schedule.id}>
+                {schedule.description}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
+  </div>
   );
 };
