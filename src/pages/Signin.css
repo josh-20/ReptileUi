@@ -1,5 +1,7 @@
 .sigin-form {
     display: flex;
+    margin: 0;
+    padding: 2rem;
     background-color: #eee;
     justify-content: center;
     align-items: center;
@@ -14,4 +16,7 @@
   .sigin-form button {
     display: block;
     width: fit-content;
+  }
+  h1 {
+    color: black;
   }
