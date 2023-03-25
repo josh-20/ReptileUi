@@ -9,8 +9,10 @@ interface Reptile {
   species: string,
   name: string,
   sex: string,
+  schedule: []
 }
 interface Schedule {
+  id: number,
   type: string,
   description: string,
   monday: boolean,
@@ -38,6 +40,10 @@ export const Dashboard: React.FC = () => {
       })
     });
     setReptiles((reptiles) => reptiles.filter((reptiles) => reptiles.id != id))
+    setSchedules([...schedules]);
+  }
+  function handleSelect(id: number) {
+    navigate(`/reptile/${id}`, {replace: true});
   }
   function handleSelect(id: number) {
     navigate(`/reptile/${id}`, {replace: true});
