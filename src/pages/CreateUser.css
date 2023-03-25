@@ -7,44 +7,56 @@ max-width: 1280px;
   display: flex;
   min-width: 320px;
   max-width: 1920px;
-  background-color: #242424;
+  background-color: #eee;
 
 }
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-  
-  }
-* {
-    box-sizing: border-box;
-  }
 .signup-form {
     display: flex;
     width: 100vw;
-    background-color: #eee;
+    background-color: #ddd;
     margin: 0;
     padding: 2rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 320px;
-    max-width: 1080px;   
+    max-width: 700px;   
+    border: solid 1px #242424;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px #242424;
+    margin-top: 100px;
   }
   .signup-form input {
     display: block;
   }
-  .signup-form button {
-    width: fit-content;
-    padding: 5px;
-    margin: 5px;
-    transition-duration: 0.4ms;
-  }
+ */
 
   .signup-form button:hover {
     background-color: #eee;
     color: gray;
   }
+  .form-title{
+    color: #242424;
+    
+  }
+  #button{
+    margin-top: 15px;
+  }
+  .input-box{
+    margin-top: -10px;
+  }
+  #first-name{
+    color: #242424;
+  }
+  #last-name{
+    color: #242424;
+  }
+  #email{
+    color: #242424;
+  }
+  #password{
+    color: #242424;
+  }
+
 
   
   

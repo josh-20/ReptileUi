@@ -4,15 +4,14 @@ export const HomePage = () => {
     const navigate = useNavigate();
     return(
         <div className="home-div">
-            <h1>Reptile Tracker</h1>
+            <h1 className="title" >Sign In or Sign Up</h1>
             <div className="Nav-div">
                 <nav className="home-nav">
-                    <button onClick={() => {navigate("/signin",{replace: true})}}>SignIn</button>
-                    <button onClick={() => {navigate("/createUser",{replace: true})}}>Create User</button>
+                    <button className="button" onClick={() => {navigate("/signin",{replace: true})}}>Sign In</button>
+                    <button className="button" onClick={() => {navigate("/createUser",{replace: true})}}>Sign Up</button>
                 </nav>
             </div>
-            <hr/>
-                <p>Reptile Tracker is a reptile managment system that provides orginized and simple scheduling formats to help users provide periodic reptile care.</p>
+            <p className="content">Reptile Tracker is a reptile management system that provides organized and simple scheduling formats to help users provide periodic reptile care.</p>
         </div>
     )
 }

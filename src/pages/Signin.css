@@ -1,17 +1,18 @@
 .signin-form {
     display: flex;
     margin: 0;
-    padding: 2rem;
-    background-color: #eee;
-    justify-content: center;
+
+    background-color: #ddd;
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    min-width: 72px;
-    max-width: 1080px;  
-    color: black;
-    height: 100vh;
+    max-width: 700px;  
+    color: #242424;
     width: 100vw;
+    margin-top: 10%;
+    border: solid 1px #242424;
+    box-shadow: 1px 1px 4px 1px #242424;
+    border-radius: 10px;
   }
   .signin-form input {
     display: block;
@@ -21,5 +22,11 @@
     width: fit-content;
   }
   .title {
-    color: black;
+    color: #242424;
+  }
+  #email{
+    margin-bottom: 10px;
+  }
+  #password{
+    margin-bottom: 10px;
   }
