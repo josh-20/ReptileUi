@@ -1,0 +1,25 @@
+.signin-form {
+    display: flex;
+    margin: 0;
+    padding: 2rem;
+    background-color: #eee;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 72px;
+    max-width: 1080px;  
+    color: black;
+    height: 100vh;
+    width: 100vw;
+  }
+  .signin-form input {
+    display: block;
+  }
+  .sigin-form button {
+    display: block;
+    width: fit-content;
+  }
+  .title {
+    color: black;
+  }

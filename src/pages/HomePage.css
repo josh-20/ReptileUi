@@ -1,0 +1,38 @@
+.home-nav {
+    display: flex;
+    background-color: #242424;
+    width: 100vw;
+    padding: 5px;
+}
+
+.home-nav button {
+    display: block;
+    padding: 5px;
+    transition-duration: 0.4ms;
+}
+.home-nav button:hover {
+    background-color: #eee;
+    color: gray;
+}
+.home-div {
+    display: flex;
+    background-color: #242424;
+    align-items: baseline;
+    flex-direction: column;
+}
+.Nav-div {
+    background-color: #242424;
+}
+hr {
+    color: #eee;
+    width: 100vw;
+}
+h1 {
+    color: #eee;
+    padding: 5px;
+}
+p {
+    color: #eee;
+    font-size: large;
+    padding: 5px;
+}
