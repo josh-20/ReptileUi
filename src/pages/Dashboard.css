@@ -1,30 +1,61 @@
-.dashboard-label{
+.dashboard-label {
     color: #242424;
     margin-top: 100px;
-}
-.container{
+  }
+  
+  #container {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     border: #242424 1px solid;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px #242424;
-    max-width: 900px;
-    width: 75%;
-}
-.reptile-ctn{
+    background-color: #ddd;
+    justify-content: space-between; /* Added */
+    min-width: 70vw;
+    margin-bottom: 200px;
+  }
+  
+  
+  .reptile {
+    display: flex;
+
+
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-bottom: #242424 solid 1px;
+  }
+  
+  .label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .reptile-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-.schedule-ctn{
+    justify-content: space-between; /* Added */
+    flex: 1;
+  }
+  
+  .reptile-buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:end;
-    margin-top: 20px;
-}
+    align-items:self-start
+    /* justify-content: flex-start; Added */
+  }
+  
+  .schedule-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    flex-direction: column; /* Added */
+  }
+  
+  .schedule {
+    margin-right: 10px;
+  }

@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import './Dashboard.css';
 import { useNavigate } from 'react-router-dom';
-import { Schedules } from './Schedules';
 import { Reptile } from './Reptile';
 
 
@@ -14,6 +13,7 @@ interface Reptile {
   schedule: []
 }
 interface Schedule {
+  reptileId: number,
   id: number,
   type: string,
   description: string,
@@ -67,29 +67,37 @@ export const Dashboard: React.FC = () => {
   return (
     <div>
       <h1 className='dashboard-label'>Dashboard</h1>
-      <div className='container'>
-        <div className='reptile-ctn'>
-          {
-            reptiles.map((reptile) => (
-              <div className="reptile" key={reptile.id}>
-                {reptile.name}
-                <button className="delete-button" onClick={() => {handleDelete(reptile.id)}}>Delete</button>
-                <button onClick={() => {handleSelect(reptile.id)}}>Select</button>
-              </div>
-            ))
-          }
+      <div id='container'>
+      <div className="label-container">
+        <div className='name'>
+          Name
         </div>
-        <div className='schedule-ctn'>
-          {
-            schedules.map((schedule) => (
-              <div className='schedule'>
+        <div className='spacer'></div>
+        <div className='schedule'>
+          Schedule
+        </div>
+      </div>
+      {reptiles.map((reptile) => (
+        <div className='reptile' key={reptile.id}>
+          <div className='reptile-info'>
+            <div className='reptile-name'>
+              {reptile.name}
+            </div>
+            <div className='reptile-buttons'>
+              <button className="button"onClick={() => {handleSelect(reptile.id)}}>Select</button>
+              <button className='button' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+            </div>
+          </div>
+          <div className='schedule-row'>
+            {schedules.filter((schedule) => schedule.reptileId === reptile.id).map((schedule) => (
+              <div className='schedule' key={schedule.id}>
                 {schedule.description}
               </div>
-            ))
-          }
+            ))}
+          </div>
         </div>
-
-      </div>
+      ))}
     </div>
+  </div>
   );
 };
