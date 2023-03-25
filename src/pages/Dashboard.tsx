@@ -31,6 +31,7 @@ interface Schedule {
 export const Dashboard: React.FC = () => {
   const [reptiles, setReptiles] = useState<Reptile[]>([]);
   const [schedules, setSchedules] = useState<Schedule[]>([]);
+
   const navigate = useNavigate();
   async function handleDelete (id: number){
     const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/delrep`, {
@@ -49,23 +50,44 @@ export const Dashboard: React.FC = () => {
     navigate(`/reptile/${id}`, {replace: true});
   }
 
+  async function handleLogout () {
+    await fetch(`${import.meta.env.VITE_SERVER_URL}/logout`, {
+      method: "post"
+    });
+    navigate("/signin", {replace: true})
+
+  function handleSelect(id: number) {
+    navigate(`/reptile/${id}`, {replace: true});
+  }
+
+
   useEffect(() => {
     const fetchAll = async () => {
-      const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
-      console.log(resRep);
-      const {reptiles} = await resRep.json();
-      setReptiles(reptiles);
+      const weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
+      const d = new Date();
+      let dayofWeek = weekday[d.getDay()];
 
-      const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/scheduleuser`);
-      const {schedules} = await resSchedule.json();
-      setSchedules(schedules); 
+      const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
+      if (resRep.status != 200){
+        navigate("/signin", {replace: true});
+        console.log("hello in side")
+        return;
+      }else{
+        console.log("still here")
+        const {reptiles} = await resRep.json();
+        setReptiles(reptiles);
+  
+        const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/scheduleuser?day=${dayofWeek}`);
+        const {schedules} = await resSchedule.json();
+        setSchedules(schedules); 
+      }
     }
     fetchAll();
-
   },[])
   
   return (
     <div>
+
       <h1 className='dashboard-label'>Dashboard</h1>
       <div id='container'>
       <div className="label-container">
@@ -82,6 +104,7 @@ export const Dashboard: React.FC = () => {
           <div className='reptile-info'>
             <div className='reptile-name'>
               {reptile.name}
+
             </div>
             <div className='reptile-buttons'>
               <button className="button"onClick={() => {handleSelect(reptile.id)}}>Select</button>
