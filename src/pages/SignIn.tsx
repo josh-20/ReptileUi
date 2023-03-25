@@ -21,8 +21,8 @@ export const SignIn = () => {
         console.log(res.text())
     }
     return(
-        <form className="sigin-form">
-            <h1>Sign In</h1>
+        <form className="signin-form">
+            <h1 className="title">Sign in</h1>
             <label>
                 Email: 
                 <input type="email" onChange={e => setEmail(e.target.value)}/>

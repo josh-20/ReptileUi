@@ -1,4 +1,4 @@
-.sigin-form {
+.signin-form {
     display: flex;
     margin: 0;
     padding: 2rem;
@@ -9,6 +9,9 @@
     padding: 20px;
     min-width: 72px;
     max-width: 1080px;  
+    color: black;
+    height: 100vh;
+    width: 100vw;
   }
   .signin-form input {
     display: block;
@@ -17,6 +20,6 @@
     display: block;
     width: fit-content;
   }
-  h1 {
+  .title {
     color: black;
   }
