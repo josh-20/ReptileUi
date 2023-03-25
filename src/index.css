@@ -17,6 +17,10 @@ body{
   height: 100vh;
 }
 #header-ctn{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
