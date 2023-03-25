@@ -5,6 +5,7 @@ import { Reptile } from './pages/Reptile';
 import { CreateUser } from './pages/CreateUser';
 import { HomePage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
+import { Header } from './pages/header';
 
 
 const router = createBrowserRouter([
