@@ -28,7 +28,7 @@ interface Schedule {
 
 
 
-export const Dashboard: React.FC = () => {
+export const Dashboard = () => {
   const [reptiles, setReptiles] = useState<Reptile[]>([]);
   const [schedules, setSchedules] = useState<Schedule[]>([]);
 
@@ -55,12 +55,7 @@ export const Dashboard: React.FC = () => {
       method: "post"
     });
     navigate("/signin", {replace: true})
-
-  function handleSelect(id: number) {
-    navigate(`/reptile/${id}`, {replace: true});
   }
-
-
   useEffect(() => {
     const fetchAll = async () => {
       const weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
