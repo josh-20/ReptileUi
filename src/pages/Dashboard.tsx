@@ -24,7 +24,7 @@ interface Schedule {
 }
 
 
-export const Dashboard: React.FC = () => {
+export const Dashboard = () => {
   const [reptiles, setReptiles] = useState<Reptile[]>([]);
   const [schedules, setSchedules] = useState<Schedule[]>([]);
 
@@ -106,4 +106,5 @@ export const Dashboard: React.FC = () => {
       <button >Create Reptile</button>
     </div>
   );
+ }
 };
