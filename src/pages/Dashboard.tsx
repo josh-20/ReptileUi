@@ -8,8 +8,7 @@ interface Reptile {
   id: number,
   species: string,
   name: string,
-  sex: string,
-  schedule: []
+  sex: string
 }
 interface Schedule {
   id: number,
@@ -62,10 +61,8 @@ export const Dashboard: React.FC = () => {
       const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
       if (resRep.status != 200){
         navigate("/signin", {replace: true});
-        console.log("hello in side")
         return;
       }else{
-        console.log("still here")
         const {reptiles} = await resRep.json();
         setReptiles(reptiles);
   
@@ -102,6 +99,7 @@ export const Dashboard: React.FC = () => {
           ))
         }
       </div>
+      <button >Create Reptile</button>
     </div>
   );
 };
