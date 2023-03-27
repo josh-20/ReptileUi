@@ -13,7 +13,6 @@
     border: solid 1px red;
     box-shadow: 1px 1px 2px rgb(102, 0, 0);
     background-color: #eee;
-    color: red;
     text-shadow: 1px 1px 1px rgb(102,0,0);
 }
 
@@ -47,25 +46,21 @@ label{
     border: 1px solid red;
     box-shadow: 1px 1px 2px rgb(102, 0, 0);
     font-weight: bold;
-    color: red;
     text-shadow: 1px 1px 1px rgb(102,0,0);
     font-weight: 400;
     font-size: large;
 }
 .create-button:hover {
   background-color: #eee;
-  color: red;
   box-shadow: 3px 3px 5px rgb(102, 0, 0);
   transform: translateY(-2px);
   transition: .15s;
 }
 .title{
-    color: red;
     text-shadow: 1px 1px 2px rgb(102,0,0);
     margin-bottom: 50px;
 }
 h4{
-    color: red;
     text-shadow: 1px 1px 2px rgb(102,0,0);
 }
 label{
