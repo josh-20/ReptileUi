@@ -32,20 +32,21 @@ export const CreateReptile = () => {
 
     return(
         <div>
-            <select value={species} onChange={e => setSpecies(e.target.value)}>
+            <select onChange={e => setSpecies(e.target.value)}>
+                <option value="none" selected disabled hidden>Select</option>
                 <option value="ball_python">Ball Python</option>
-                <option value="king_snake">king_snake</option>
-                <option value="corn_snake">corn_snake</option>
-                <option value="redtail_boa">redtail_boa</option>
+                <option value="king_snake">King Snake</option>
+                <option value="corn_snake">Corn Snake</option>
+                <option value="redtail_boa">Redtail Boa</option>
             </select>
             <label>
                 <h4>Name</h4>
+                <input value={name} onChange={e => setName(e.target.value)}/>
             <label>
-                <input value={name} onChange={e => setName(e.target.value)}>Name</input>
             </label>
                 <h4>Gender</h4>
+                <input value={sex} onChange={e => setSex(e.target.value)}/>
             </label>
-                <input value={sex} onChange={e => setSex(e.target.value)}>Sex</input>
             <button onClick={handleCreate}>Create</button>
         </div>
     )
