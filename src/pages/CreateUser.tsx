@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import  './CreateUser.css';
+import  './style/CreateUser.css';
 
 export const CreateUser = () => {
   const navigate = useNavigate();

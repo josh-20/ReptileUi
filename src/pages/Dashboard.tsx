@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Dashboard.css';
+import './style/Dashboard.css';
 import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
 import { CreateReptile } from './CreateReptile';
 
@@ -52,13 +52,7 @@ export const Dashboard = () => {
     navigate("/createRep", {replace:true})
   }
 
-  // HandleLogout
-  async function handleLogout () {
-    await fetch(`${import.meta.env.VITE_SERVER_URL}/logout`, {
-      method: "post"
-    });
-    navigate("/signin", {replace: true})
-  }
+
   useEffect(() => {
     const fetchAll = async () => {
       const weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]

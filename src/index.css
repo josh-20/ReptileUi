@@ -29,6 +29,9 @@ body{
   color: #eee;
   height:100px
 }
+#header{
+  margin-top: 20px;
+}
 .header{
   background-color: #242424;
 
