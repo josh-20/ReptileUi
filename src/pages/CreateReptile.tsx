@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import "./style/CreateReptile.css"
+import "bootstrap/dist/css/bootstrap.css";
 
 export const CreateReptile = () => {
     const navigate = useNavigate();
@@ -31,23 +33,32 @@ export const CreateReptile = () => {
 
 
     return(
-        <div>
-            <select onChange={e => setSpecies(e.target.value)}>
-                <option value="none" selected disabled hidden>Select</option>
-                <option value="ball_python">Ball Python</option>
-                <option value="king_snake">King Snake</option>
-                <option value="corn_snake">Corn Snake</option>
-                <option value="redtail_boa">Redtail Boa</option>
-            </select>
-            <label>
-                <h4>Name</h4>
-                <input value={name} onChange={e => setName(e.target.value)}/>
-            <label>
-            </label>
-                <h4>Gender</h4>
-                <input value={sex} onChange={e => setSex(e.target.value)}/>
-            </label>
-            <button onClick={handleCreate}>Create</button>
+      
+        <div className="container">
+          <div className="row">
+          <h1 className="title">Create a Reptile</h1>
+          
+        <label className="col-xs-12 col-sm-3">
+          <h4>Name</h4>
+          <input className="name" value={name} onChange={e => setName(e.target.value)}/>
+        </label>
+        <label className="col-xs-12 col-sm-3">
+          <h4>Gender</h4>
+          <input className="sex" value={sex} onChange={e => setSex(e.target.value)} />
+        </label>
+        <label className="col-xs-12 col-sm-3">
+          <select className="species" onChange={e => setSpecies(e.target.value)}>
+              <option value="none" selected disabled hidden>Select</option>
+              <option value="ball_python">Ball Python</option>
+              <option value="king_snake">King Snake</option>
+              <option value="corn_snake">Corn Snake</option>
+              <option value="redtail_boa">Redtail Boa</option>
+          </select>
+          </label>
+        <div className="col-xs-12 col-sm-3 button-ctn">
+          <button className="create-button" onClick={handleCreate}>Create</button>
+        </div>
+          </div>
         </div>
     )
 }

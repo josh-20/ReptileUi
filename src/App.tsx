@@ -7,7 +7,6 @@ import { Dashboard } from './pages/Dashboard';
 import { Header } from './pages/header';
 import { CreateReptile } from './pages/CreateReptile';
 
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/createRep",
     element: <CreateReptile />
+  },
+  {
+    path: "/header",
+    element: <Header />
   }
 ])
 
