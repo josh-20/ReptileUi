@@ -24,6 +24,7 @@ export const CreateReptile = () => {
             navigate("/signin", {replace: true});
             return
         }
+        res.json();
         navigate("/dash",{replace: true});
     }
 
@@ -31,20 +32,20 @@ export const CreateReptile = () => {
 
     return(
         <div>
+            <select value={species} onChange={e => setSpecies(e.target.value)}>
+                <option value="ball_python">Ball Python</option>
+                <option value="king_snake">king_snake</option>
+                <option value="corn_snake">corn_snake</option>
+                <option value="redtail_boa">redtail_boa</option>
+            </select>
             <label>
-                <select onChange={e => setSpecies(e.target.value)}>
-                    <option value="ball_python">Ball Python</option>
-                    <option value="king_snake">king_snake</option>
-                    <option value="corn_snake">corn_snake</option>
-                    <option value="redtail_boa">redtail_boa</option>
-                </select>
-            </label>
+                <h4>Name</h4>
             <label>
-                <input onChange={e => setName(e.target.value)}>Name</input>
+                <input value={name} onChange={e => setName(e.target.value)}>Name</input>
             </label>
-            <label>
-                <input onChange={e => setSex(e.target.value)}>Sex</input>
+                <h4>Gender</h4>
             </label>
+                <input value={sex} onChange={e => setSex(e.target.value)}>Sex</input>
             <button onClick={handleCreate}>Create</button>
         </div>
     )

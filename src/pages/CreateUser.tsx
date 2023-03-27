@@ -4,7 +4,7 @@ import  './CreateUser.css';
 
 export const CreateUser = () => {
   const navigate = useNavigate();
-  const [firstName, setFristName] = useState("")
+  const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -29,7 +29,7 @@ export const CreateUser = () => {
       <h2 className="form-title">Sign Up</h2>
       <label>
         <h4 id="first-name" >FirstName</h4>
-        <input className="input-box" type="text" value={firstName} onChange={e => setFristName(e.target.value)}/>
+        <input className="input-box" type="text" value={firstName} onChange={e => setFirstName(e.target.value)}/>
       </label>
       <label>
         <h4 id="last-name">LastName</h4>
