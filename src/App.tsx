@@ -6,25 +6,46 @@ import { HomePage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
 import { Header } from './pages/header';
 import { CreateReptile } from './pages/CreateReptile';
+
+import { Layout } from './pages/layout';
+
+
 import { CreateScheduleRep } from "./pages/CreateScheduleRep";
 import { CreateHusbandry } from "./pages/CreateHusbandry";
 import { CreateFeed } from "./pages/CreateFeed";
+
 const router = createBrowserRouter([
+
   {
     path: '/',
-    element: <HomePage />
-  },
-  {
-    path: '/signin',
-    element: <SignIn />
-  },
-  {
-    path: '/reptile/:id/:name/:sex/:species',
-    element: <Reptile />
-  },
-  {
-    path: "/createUser",
-    element: <CreateUser />
+    element: <Layout />,
+    children: [ 
+    {path: '/',
+      element: <HomePage />,},
+    {
+      path: '/signin',
+      element: <SignIn />
+    },
+    {
+      path: '/reptile/:id/:name/:sex/:species',
+      element: <Reptile />
+    },
+    {
+      path: "/createUser",
+      element: <CreateUser />
+    },
+    {
+      path: "/dash",
+      element: <Dashboard />
+    },
+    {
+      path: "/createRep",
+      element: <CreateReptile />
+    },
+    {
+      path: "/header",
+      element: <Header />
+    }]
   },
   {
     path: "/dash",
