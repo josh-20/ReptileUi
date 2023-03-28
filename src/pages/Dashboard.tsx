@@ -1,16 +1,14 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
-import './Dashboard.css';
-import { useNavigate } from 'react-router-dom';
-import { Reptile } from './Reptile';
+import './style/Dashboard.css';
+import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
+import { CreateReptile } from './CreateReptile';
 
 
 interface Reptile {
   id: number,
   species: string,
   name: string,
-  sex: string,
-  schedule: []
+  sex: string
 }
 interface Schedule {
   reptileId: number,
@@ -27,12 +25,12 @@ interface Schedule {
 }
 
 
-
 export const Dashboard = () => {
   const [reptiles, setReptiles] = useState<Reptile[]>([]);
   const [schedules, setSchedules] = useState<Schedule[]>([]);
-
   const navigate = useNavigate();
+
+  // Delete Reptile
   async function handleDelete (id: number){
     const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/delrep`, {
       method: "delete",
@@ -46,16 +44,15 @@ export const Dashboard = () => {
     setReptiles((reptiles) => reptiles.filter((reptiles) => reptiles.id != id))
     setSchedules([...schedules]);
   }
-  function handleSelect(id: number) {
-    navigate(`/reptile/${id}`, {replace: true});
+  function handleSelect(id: number, name: string, sex: string, species: string) {
+    navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
+  }
+// create Reptile
+  async function handleCreateReptile() {
+    navigate("/createRep", {replace:true})
   }
 
-  async function handleLogout () {
-    await fetch(`${import.meta.env.VITE_SERVER_URL}/logout`, {
-      method: "post"
-    });
-    navigate("/signin", {replace: true})
-  }
+
   useEffect(() => {
     const fetchAll = async () => {
       const weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
@@ -65,10 +62,8 @@ export const Dashboard = () => {
       const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
       if (resRep.status != 200){
         navigate("/signin", {replace: true});
-        console.log("hello in side")
         return;
       }else{
-        console.log("still here")
         const {reptiles} = await resRep.json();
         setReptiles(reptiles);
   
@@ -82,7 +77,6 @@ export const Dashboard = () => {
   
   return (
     <div>
-
       <h1 className='dashboard-label'>Dashboard</h1>
       <div id='container'>
       <div className="label-container">
@@ -102,7 +96,7 @@ export const Dashboard = () => {
 
             </div>
             <div className='reptile-buttons'>
-              <button className="button"onClick={() => {handleSelect(reptile.id)}}>Select</button>
+              <button className="button"onClick={() => {handleSelect(reptile.id, reptile.name,reptile.sex,reptile.species)}}>Select</button>
               <button className='button' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
             </div>
           </div>
@@ -115,6 +109,7 @@ export const Dashboard = () => {
           </div>
         </div>
       ))}
+      <button onClick={handleCreateReptile}>Create Reptile</button>
     </div>
   </div>
   );

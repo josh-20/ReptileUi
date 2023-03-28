@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
 import { SignIn } from './pages/SignIn';
 import { Reptile } from './pages/Reptile';
@@ -6,8 +5,10 @@ import { CreateUser } from './pages/CreateUser';
 import { HomePage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
 import { Header } from './pages/header';
-
-
+import { CreateReptile } from './pages/CreateReptile';
+import { CreateScheduleRep } from "./pages/CreateScheduleRep";
+import { CreateHusbandry } from "./pages/CreateHusbandry";
+import { CreateFeed } from "./pages/CreateFeed";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     element: <SignIn />
   },
   {
-    path: '/reptile',
+    path: '/reptile/:id/:name/:sex/:species',
     element: <Reptile />
   },
   {
@@ -28,6 +29,26 @@ const router = createBrowserRouter([
   {
     path: "/dash",
     element: <Dashboard />
+  },
+  {
+    path: "/createRep",
+    element: <CreateReptile />
+  },
+  {
+    path: "/header",
+    element: <Header />
+  },
+  {
+    path: "/createScheduleRep/:id/:name/:sex/:species",
+    element: <CreateScheduleRep/>
+  },
+  {
+    path: "/createHusbandry/:id/:name/:sex/:species",
+    element: <CreateHusbandry/>
+  },
+  {
+    path: "/createFeed/:id/:name/:sex/:species",
+    element: <CreateFeed/>
   }
 ])
 
