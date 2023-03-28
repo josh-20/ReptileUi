@@ -1,6 +1,5 @@
 .dashboard-label {
     color: #242424;
-    margin-top: 100px;
   }
   
   #container {
@@ -17,7 +16,6 @@
   .reptile {
     margin-bottom: 10px;
     width: 100%;
-
     border-bottom: #242424 solid 1px;
   }
   

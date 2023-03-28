@@ -6,7 +6,12 @@ import { HomePage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
 import { Header } from './pages/header';
 import { CreateReptile } from './pages/CreateReptile';
+
 import { Layout } from './pages/layout';
+
+import { CreateScheduleRep } from "./pages/CreateScheduleRep";
+import { CreateHusbandry } from "./pages/CreateHusbandry";
+import { CreateFeed } from "./pages/CreateFeed";
 
 const router = createBrowserRouter([
 
@@ -42,6 +47,42 @@ const router = createBrowserRouter([
     }]
   },
 
+  {
+    path: '/signin',
+    element: <SignIn />
+  },
+  {
+    path: '/reptile/:id/:name/:sex/:species',
+    element: <Reptile />
+  },
+  {
+    path: "/createUser",
+    element: <CreateUser />
+  },
+  {
+    path: "/dash",
+    element: <Dashboard />
+  },
+  {
+    path: "/createRep",
+    element: <CreateReptile />
+  },
+  {
+    path: "/header",
+    element: <Header />
+  },
+  {
+    path: "/createScheduleRep/:id/:name/:sex/:species",
+    element: <CreateScheduleRep/>
+  },
+  {
+    path: "/createHusbandry/:id/:name/:sex/:species",
+    element: <CreateHusbandry/>
+  },
+  {
+    path: "/createFeed/:id/:name/:sex/:species",
+    element: <CreateFeed/>
+  }
 ])
 
 export const App = () => {

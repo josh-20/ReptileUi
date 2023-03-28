@@ -76,14 +76,14 @@ export const Dashboard = () => {
   },[])
   
   return (
-    <div>
+    <div className='container'>
+      <div className="row">
       <h1 className='dashboard-label'>Dashboard</h1>
       <div id='container'>
       <div className="label-container">
         <div className='col-sm-6'>
           Name
         </div>
-        <div className='spacer'></div>
         <div className='schedule col-sm-6'>
           Schedule
         </div>
@@ -96,8 +96,8 @@ export const Dashboard = () => {
 
             </div>
             <div className='reptile-buttons'>
-              <button className="button"onClick={() => {handleSelect(reptile.id, reptile.name,reptile.sex,reptile.species)}}>Select</button>
-              <button className='button' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+              <button className="button col-sm-3" onClick={() => {handleSelect(reptile.id, reptile.name,reptile.sex,reptile.species)}}>Select</button>
+              <button className='button col-sm-3' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
             </div>
           </div>
           <div className='schedule-row'>
@@ -111,6 +111,7 @@ export const Dashboard = () => {
       ))}
       <button className="button" onClick={handleCreateReptile}>Create Reptile</button>
     </div>
+  </div>
   </div>
   );
 };
