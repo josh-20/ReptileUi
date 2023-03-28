@@ -37,15 +37,15 @@ export const Reptile = () => {
 
 
     function handleCreateHusbandry() {
-        navigate('/createHusbandry',{replace:true})
+        navigate(`/createHusbandry/${id}/${name}/${sex}/${species}`,{replace:true})
 
     }
     function handleCreateSchedule () {
-        navigate("/createScheduleRep", {replace: true})
+        navigate(`/createScheduleRep/${id}/${name}/${sex}/${species}`, {replace: true})
 
     }
     function handleCreateFeed () {
-
+        navigate(`/createFeed${id}/${name}/${sex}/${species}`, {replace: true});
     }
 
     useEffect(() => {
@@ -98,13 +98,34 @@ export const Reptile = () => {
                     schedules?.map((schedule) => (
                         <div key={schedule.id}>
                             {schedule.description}
-                            {schedule.monday}
-                            {schedule.tuesday}
-                            {schedule.wednesday}
-                            {schedule.thursday}
-                            {schedule.friday}
-                            {schedule.saturday}
-                            {schedule.sunday}
+                            <label>
+                                Monday
+                                <input type="checkbox" checked={schedule.monday} disabled/>
+                            </label>
+                            <label>
+                                Tuesday
+                                <input type="checkbox" checked={schedule.tuesday} disabled/>
+                            </label>
+                            <label>
+                                Wednesday
+                                <input type="checkbox" checked={schedule.wednesday} disabled/>
+                            </label>
+                            <label>
+                                Thursday
+                                <input type="checkbox" checked={schedule.thursday} disabled/>
+                            </label>
+                            <label>
+                                Friday
+                                <input type="checkbox" checked={schedule.friday}  disabled/>
+                            </label>
+                            <label>
+                                Saturday
+                                <input type="checkbox" checked={schedule.saturday} disabled/>
+                            </label>
+                            <label>
+                                Sunday
+                                <input type="checkbox" checked={schedule.sunday} disabled/>
+                            </label>
                         </div>
                     ))
                 }
