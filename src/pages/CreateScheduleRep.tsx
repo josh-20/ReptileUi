@@ -34,7 +34,7 @@ export const CreateScheduleRep = () => {
                 sunday
             })
         });
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`);
+        navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
     }
     return(
         <div>

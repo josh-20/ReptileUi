@@ -45,7 +45,7 @@ export const Reptile = () => {
 
     }
     function handleCreateFeed () {
-        navigate(`/createFeed${id}/${name}/${sex}/${species}`, {replace: true});
+        navigate(`/createFeed/${id}/${name}/${sex}/${species}`, {replace: true});
     }
 
     useEffect(() => {
@@ -76,8 +76,8 @@ export const Reptile = () => {
         }
     },[])
     useEffect(() => {
-        console.log(schedules)
-    },[schedules])
+        console.log(husbandrys)
+    },[husbandrys])
     return(
         <div>
             <div>
