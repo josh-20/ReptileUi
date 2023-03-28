@@ -9,13 +9,10 @@ import { CreateReptile } from './pages/CreateReptile';
 
 import { Layout } from './pages/layout';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 16347203516c96d414ab014cc26a887f1e1505a4
 import { CreateScheduleRep } from "./pages/CreateScheduleRep";
 import { CreateHusbandry } from "./pages/CreateHusbandry";
 import { CreateFeed } from "./pages/CreateFeed";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 const router = createBrowserRouter([
 
@@ -48,48 +45,46 @@ const router = createBrowserRouter([
     {
       path: "/header",
       element: <Header />
+      
+    },  {
+      path: '/signin',
+      element: <SignIn />
+    },
+    {
+      path: '/reptile/:id/:name/:sex/:species',
+      element: <Reptile />
+    },
+    {
+      path: "/createUser",
+      element: <CreateUser />
+    },
+    {
+      path: "/dash",
+      element: <Dashboard />
+    },
+    {
+      path: "/createRep",
+      element: <CreateReptile />
+    },
+    {
+      path: "/header",
+      element: <Header />
+    },
+    {
+      path: "/createScheduleRep/:id/:name/:sex/:species",
+      element: <CreateScheduleRep/>
+    },
+    {
+      path: "/createHusbandry/:id/:name/:sex/:species",
+      element: <CreateHusbandry/>
+    },
+    {
+      path: "/createFeed/:id/:name/:sex/:species",
+      element: <CreateFeed/>
     }]
   },
-<<<<<<< HEAD
 
-  {
-    path: '/signin',
-    element: <SignIn />
-  },
-  {
-    path: '/reptile/:id/:name/:sex/:species',
-    element: <Reptile />
-  },
-  {
-    path: "/createUser",
-    element: <CreateUser />
-  },
-=======
->>>>>>> 16347203516c96d414ab014cc26a887f1e1505a4
-  {
-    path: "/dash",
-    element: <Dashboard />
-  },
-  {
-    path: "/createRep",
-    element: <CreateReptile />
-  },
-  {
-    path: "/header",
-    element: <Header />
-  },
-  {
-    path: "/createScheduleRep/:id/:name/:sex/:species",
-    element: <CreateScheduleRep/>
-  },
-  {
-    path: "/createHusbandry/:id/:name/:sex/:species",
-    element: <CreateHusbandry/>
-  },
-  {
-    path: "/createFeed/:id/:name/:sex/:species",
-    element: <CreateFeed/>
-  }
+
 ])
 
 export const App = () => {

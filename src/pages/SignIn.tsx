@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './style/Signin.css';
 
+
+
 export const SignIn = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -27,7 +29,7 @@ export const SignIn = () => {
                     <h1 className="title">Sign in</h1>
                     <label className="signin-label col-xs-12">
                         <h4 id="email" >Email:</h4> 
-                        <input type="email" onChange={e => setEmail(e.target.value)}/>
+                        <input className="col-xs-12" type="email" onChange={e => setEmail(e.target.value)}/>
                     </label>
                     <label className="signin-label">
                         <h4 id="password">Password:</h4> 
