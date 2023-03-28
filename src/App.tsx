@@ -12,7 +12,6 @@ import { Layout } from './pages/layout';
 import { CreateScheduleRep } from "./pages/CreateScheduleRep";
 import { CreateHusbandry } from "./pages/CreateHusbandry";
 import { CreateFeed } from "./pages/CreateFeed";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 const router = createBrowserRouter([
 
