@@ -80,11 +80,11 @@ export const Dashboard = () => {
       <h1 className='dashboard-label'>Dashboard</h1>
       <div id='container'>
       <div className="label-container">
-        <div className='name'>
+        <div className='col-sm-6'>
           Name
         </div>
         <div className='spacer'></div>
-        <div className='schedule'>
+        <div className='schedule col-sm-6'>
           Schedule
         </div>
       </div>
@@ -109,7 +109,7 @@ export const Dashboard = () => {
           </div>
         </div>
       ))}
-      <button onClick={handleCreateReptile}>Create Reptile</button>
+      <button className="button" onClick={handleCreateReptile}>Create Reptile</button>
     </div>
   </div>
   );

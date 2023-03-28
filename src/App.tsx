@@ -6,36 +6,42 @@ import { HomePage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
 import { Header } from './pages/header';
 import { CreateReptile } from './pages/CreateReptile';
+import { Layout } from './pages/layout';
 
 const router = createBrowserRouter([
+
   {
     path: '/',
-    element: <HomePage />
+    element: <Layout />,
+    children: [ 
+    {path: '/',
+      element: <HomePage />,},
+    {
+      path: '/signin',
+      element: <SignIn />
+    },
+    {
+      path: '/reptile/:id/:name/:sex/:species',
+      element: <Reptile />
+    },
+    {
+      path: "/createUser",
+      element: <CreateUser />
+    },
+    {
+      path: "/dash",
+      element: <Dashboard />
+    },
+    {
+      path: "/createRep",
+      element: <CreateReptile />
+    },
+    {
+      path: "/header",
+      element: <Header />
+    }]
   },
-  {
-    path: '/signin',
-    element: <SignIn />
-  },
-  {
-    path: '/reptile/:id/:name/:sex/:species',
-    element: <Reptile />
-  },
-  {
-    path: "/createUser",
-    element: <CreateUser />
-  },
-  {
-    path: "/dash",
-    element: <Dashboard />
-  },
-  {
-    path: "/createRep",
-    element: <CreateReptile />
-  },
-  {
-    path: "/header",
-    element: <Header />
-  }
+
 ])
 
 export const App = () => {

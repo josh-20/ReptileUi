@@ -4,56 +4,26 @@
   }
   
   #container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     border: #242424 1px solid;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 4px 1px #242424;
     background-color: #ddd;
-    justify-content: space-between; /* Added */
     min-width: 70vw;
     margin-bottom: 200px;
   }
   
   
   .reptile {
-    display: flex;
-
-
     margin-bottom: 10px;
     width: 100%;
-    padding: 10px;
+
     border-bottom: #242424 solid 1px;
   }
   
-  .label-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .reptile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Added */
-    flex: 1;
-  }
-  
-  .reptile-buttons {
-    display: flex;
-    align-items:self-start
-    /* justify-content: flex-start; Added */
-  }
   
   .schedule-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 100px;
     margin-bottom: 10px;
-    flex-direction: column; /* Added */
   }
   
   .schedule {
