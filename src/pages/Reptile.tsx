@@ -35,10 +35,23 @@ export const Reptile = () => {
     const [schedules, setSchedules] = useState<Schedule[]>([]);
     const [feeds,setFeeds] = useState<Feed[]>([]);
 
+
+    function handleCreateHusbandry() {
+        navigate('/createHusbandry',{replace:true})
+
+    }
+    function handleCreateSchedule () {
+        navigate("/createScheduleRep", {replace: true})
+
+    }
+    function handleCreateFeed () {
+
+    }
+
     useEffect(() => {
         try {
             async function fetchAll() {
-            
+                // make request for Husbandry
                 const resHusbandry = await fetch(`${import.meta.env.VITE_SERVER_URL}/husbandry?id=${id}`);
                 if(resHusbandry.status != 200){
                     navigate("/signin", {replace: true});
@@ -46,23 +59,21 @@ export const Reptile = () => {
                 }
                 const {husbandry} = await resHusbandry.json();
                 setHusbandrys(husbandry);
+
+                // make request for schedules
+                const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/schedulerep?reptileId=${id}`);
+                const{schedules}= await resSchedule.json();
+                setSchedules(schedules);
+
+                //make request for feed
                 const resFeed = await fetch(`${import.meta.env.VITE_SERVER_URL}/feed?id=${id}`);
-                const {feed} = await resFeed.json();
-                setFeeds(feed);
+                const {feedings} = await resFeed.json();
+                setFeeds(feedings);
             }
                 fetchAll();
         } catch (error) {
             console.log(error);        
         }
-    },[])
-    useEffect(() => {
-        async function fetchAll(){
-            const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/schedulerep?id=${id}`);
-            const schedule = await resSchedule.json();
-            console.log(schedule);
-            setSchedules(schedule);
-        }
-        fetchAll();
     },[])
     useEffect(() => {
         console.log(schedules)
@@ -103,11 +114,13 @@ export const Reptile = () => {
                     feeds?.map((feed) => (
                         <div key={feed.id}>
                             Feed: {feed.foodItem}
-                            
                         </div>
                     ))
                 }
             </div>
+                <button onClick={handleCreateHusbandry}>Create Husbandry</button>
+                <button onClick={handleCreateSchedule}>Create Schedule</button>
+                <button onClick={handleCreateFeed}>Create feeding</button>
         </div>
     )
 }

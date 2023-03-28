@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import "./style/CreateReptile.css"
-import "bootstrap/dist/css/bootstrap.css";
 
 export const CreateReptile = () => {
     const navigate = useNavigate();
