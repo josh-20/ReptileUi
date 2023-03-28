@@ -9,6 +9,10 @@ import { CreateReptile } from './pages/CreateReptile';
 
 import { Layout } from './pages/layout';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 16347203516c96d414ab014cc26a887f1e1505a4
 import { CreateScheduleRep } from "./pages/CreateScheduleRep";
 import { CreateHusbandry } from "./pages/CreateHusbandry";
 import { CreateFeed } from "./pages/CreateFeed";
@@ -46,6 +50,7 @@ const router = createBrowserRouter([
       element: <Header />
     }]
   },
+<<<<<<< HEAD
 
   {
     path: '/signin',
@@ -59,6 +64,8 @@ const router = createBrowserRouter([
     path: "/createUser",
     element: <CreateUser />
   },
+=======
+>>>>>>> 16347203516c96d414ab014cc26a887f1e1505a4
   {
     path: "/dash",
     element: <Dashboard />
