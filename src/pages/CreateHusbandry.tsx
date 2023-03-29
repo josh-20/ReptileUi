@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style/routingStyle.css';
 
 export const CreateHusbandry = () => {
     const {id, name, sex, species} = useParams();
@@ -26,24 +28,36 @@ export const CreateHusbandry = () => {
     }
 
     return(
-        <div>
-            <label>
-                Weight
-                <input onChange={e =>setWeight(e.target.value)}/>
-            </label>
-            <label>
-                Length
-                <input onChange={e =>setLength(e.target.value)}/>
-            </label>
-            <label>
-                Temperature
-                <input onChange={e =>setTemperature(e.target.value)}/>
-            </label>
-            <label>
-                Humidity
-                <input onChange={e =>setHumidity(e.target.value)}/>    
-            </label>
-            <button onClick={handleSubmit}>Create</button>
+        <div className="container">
+            <div className="row">
+                <label>
+                    <h3>
+                        Weight
+                    </h3>
+                    <input onChange={e =>setWeight(e.target.value)}/>
+                </label>
+                <label>
+                    <h3>
+                        Length
+                    </h3>
+                    <input onChange={e =>setLength(e.target.value)}/>
+                </label>
+                <label>
+                    <h3>
+                        Temperature
+                    </h3>
+                    <input onChange={e =>setTemperature(e.target.value)}/>
+                </label>
+                <label>
+                    <h3>
+                        Humidity
+                    </h3>
+                    <input onChange={e =>setHumidity(e.target.value)}/>    
+                </label>
+                <div className="ctn-btn">
+                    <button className="button butt-on" onClick={handleSubmit}>Create</button>
+                </div>
+            </div>
         </div>
     )
 }

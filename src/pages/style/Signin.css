@@ -1,27 +1,22 @@
 .signin-form {
-
-    margin: 0px auto;
-    background-color: #ddd;
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-    max-width: 700px;  
+    margin: 0px auto;
+    background-color: #ddd;  
     color: #242424;
-    width: 100%;
-    margin-top: 150px;
+    margin-top: 50px;
     border: solid 1px #242424;
     box-shadow: 1px 1px 4px 1px #242424;
     border-radius: 10px;
+    width: 200;
   }
   .signin-form input {
-    width: 100%;
     border-radius: 5px;
     border: solid 1px #242424;
     margin-bottom: 10px;
-  }
-  .sigin-form button {
-    display: block;
-    width: fit-content;
+    width: 80%;
   }
   .signin-label{
     margin: 0px 5px 25px 5px
@@ -30,8 +25,12 @@
     color: #242424;
   }
   #email{
+
     margin-bottom: 10px;
   }
   #password{
     margin-bottom: 10px;
+  }
+  #button{
+    margin-bottom: 20px;
   }

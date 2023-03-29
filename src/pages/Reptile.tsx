@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import './style/routingStyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Husbandry {
     id: number,
@@ -78,70 +79,96 @@ export const Reptile = () => {
     useEffect(() => {
         console.log(husbandrys)
     },[husbandrys])
-    return(
-        <div>
-            <div>
-                {
-                    husbandrys?.map((husbandry) => (
-                        <div key={husbandry.id}>
-                            Humiidity: {husbandry.humidity}
-                            length: {husbandry.length}
-                            Temperature: {husbandry.temperature}
-                            Weight: {husbandry.weight}
-                        </div>
-                    ))
-                    
-                }
+return(
+  <div className="container styling">
+    <h1>Reptile Info</h1>
+    <div className="row containment">
+      {
+        husbandrys?.map((husbandry) => (
+          <div key={husbandry.id}>
+            <h3>
+              Humidity: {husbandry.humidity}
+            </h3>
+            <h3>
+              length: {husbandry.length} 
+            </h3>
+            <h3>
+              Temperature: {husbandry.temperature} 
+            </h3>
+            <h3>
+              Weight: {husbandry.weight} 
+            </h3>
+          </div>
+        ))
+      }
+    </div>
+    <div>
+      {
+        schedules?.map((schedule) => (
+          <div key={schedule.id}>
+            <h3 className="schedule-label">
+            Schedule: {schedule.description}
+            </h3>
+            <label>
+              <h5>
+                Monday
+              </h5>
+              <input type="checkbox" checked={schedule.monday} disabled/>
+            </label>
+            <label>
+              <h5>
+                Tuesday
+              </h5>
+              <input type="checkbox" checked={schedule.tuesday} disabled/>
+            </label>
+            <label>
+              <h5>
+                Wednesday
+              </h5>
+              <input type="checkbox" checked={schedule.wednesday} disabled/>
+            </label>
+            <label>
+              <h5>
+                Thursday
+              </h5>
+              <input type="checkbox" checked={schedule.thursday} disabled/>
+            </label>
+            <label>
+              <h5>
+                Friday
+              </h5>
+              <input type="checkbox" checked={schedule.friday}  disabled/>
+            </label>
+            <label>
+              <h5>
+                Saturday
+              </h5>
+              <input type="checkbox" checked={schedule.saturday} disabled/>
+            </label>
+            <label>
+              <h5>
+                Sunday
+              </h5>
+              <input type="checkbox" checked={schedule.sunday} disabled/>
+            </label>
+          </div>
+        ))
+      }
+      </div>
+      <div>
+        {
+          feeds?.map((feed) => (
+            <div key={feed.id}>
+              <h5 className="feed-label">
+              Feed: {feed.foodItem}
+              </h5>
             </div>
-            <div>
-                {
-                    schedules?.map((schedule) => (
-                        <div key={schedule.id}>
-                            {schedule.description}
-                            <label>
-                                Monday
-                                <input type="checkbox" checked={schedule.monday} disabled/>
-                            </label>
-                            <label>
-                                Tuesday
-                                <input type="checkbox" checked={schedule.tuesday} disabled/>
-                            </label>
-                            <label>
-                                Wednesday
-                                <input type="checkbox" checked={schedule.wednesday} disabled/>
-                            </label>
-                            <label>
-                                Thursday
-                                <input type="checkbox" checked={schedule.thursday} disabled/>
-                            </label>
-                            <label>
-                                Friday
-                                <input type="checkbox" checked={schedule.friday}  disabled/>
-                            </label>
-                            <label>
-                                Saturday
-                                <input type="checkbox" checked={schedule.saturday} disabled/>
-                            </label>
-                            <label>
-                                Sunday
-                                <input type="checkbox" checked={schedule.sunday} disabled/>
-                            </label>
-                        </div>
-                    ))
-                }
-            </div>
-            <div>
-                {
-                    feeds?.map((feed) => (
-                        <div key={feed.id}>
-                            Feed: {feed.foodItem}
-                        </div>
-                    ))
-                }
-            </div>
-                <button onClick={handleCreateHusbandry}>Create Husbandry</button>
-                <button onClick={handleCreateSchedule}>Create Schedule</button>
-                <button onClick={handleCreateFeed}>Create feeding</button>
-        </div>
-    )
+          ))
+        }
+      </div>
+      <button className="button router-button col-xs-12" onClick={handleCreateHusbandry}>Create Husbandry</button>
+      <button className="button router-button col-xs-12" onClick={handleCreateSchedule}>Create Schedule</button>
+      <button className="button router-button col-xs-12" onClick={handleCreateFeed}>Create Feeding</button>
+    </div>
+  )
 }

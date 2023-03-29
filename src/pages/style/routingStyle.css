@@ -1,0 +1,19 @@
+.router-button{
+    width: 170px;
+    margin: 20px 10px 20px 10px;
+}
+h5{
+    margin: 0px 20px 0px 20px;
+}
+h3{
+    margin: 20px 20px 0px 20px;
+}
+.schedule-label{
+    margin: 20px 20px 20px 20px;
+}
+.feed-label{
+    margin: 20px 20px 20px 20px;
+}
+.styling{
+    background-color: #ddd;
+}

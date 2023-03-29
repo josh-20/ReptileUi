@@ -1,31 +1,40 @@
-.dashboard-label {
-    color: #242424;
-    margin-top: 100px;
-  }
-  
-  #container {
-    border: #242424 1px solid;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 4px 1px #242424;
-    background-color: #ddd;
-    min-width: 70vw;
-    margin-bottom: 200px;
-  }
-  
-  
-  .reptile {
-    margin-bottom: 10px;
-    width: 100%;
+.container{
+  margin-top: 100px;
+  display: block;
+  margin-bottom: 100px;
 
-    border-bottom: #242424 solid 1px;
-  }
-  
-  
-  .schedule-row {
-    margin-bottom: 10px;
-  }
-  
-  .schedule {
-    margin-right: 10px;
-  }
+}
+#root{
+  display: block;
+}
+.reptile-name{
+  font-weight: 450;
+  color: red;
+  text-decoration: underline;
+  font-size: larger;
+}
+.reptile-name:hover{
+  color: rgb(200, 0, 0);
+  cursor: pointer;
+}
+.schedule{
+  font-size: larger;
+}
+.border-design{
+  border: 1px solid #242424;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ddd;
+  box-shadow: 1px 1px 2px rgb(102, 0, 0);
+  border-bottom: 1px solid red;
+  border-color: #242424;
+}
+.spacer{
+  margin: 20px 0px 50px 0px;
+}
+.dashboard-label{
+  margin-bottom: 50px;
+}
+.name-label{
+  text-decoration: underline;
+}

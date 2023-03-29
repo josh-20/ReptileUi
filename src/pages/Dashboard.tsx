@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './style/Dashboard.css';
 import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
-import { CreateReptile } from './CreateReptile';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 interface Reptile {
@@ -74,43 +74,35 @@ export const Dashboard = () => {
     }
     fetchAll();
   },[])
-  
   return (
-    <div>
-      <h1 className='dashboard-label'>Dashboard</h1>
-      <div id='container'>
-      <div className="label-container">
-        <div className='col-sm-6'>
-          Name
-        </div>
-        <div className='spacer'></div>
-        <div className='schedule col-sm-6'>
-          Schedule
+    <div className='container'>
+      <div className='row border-design'>
+        <h1 className='dashboard-label'>Dashboard</h1>
+        <h5 className="col-sm-4 name-label">Reptile Name</h5>
+        <h5 className="col-sm-4 name-label">Schedule Name</h5>
+        {reptiles.map((reptile) => (
+          <div className='reptile' key={reptile.id}>
+              <div className='row'>
+                <div className='col-sm-4 reptile-name' onClick={() => { handleSelect(reptile.id, reptile.name, reptile.sex, reptile.species) }}>
+                  {reptile.name}
+                </div>
+                <div className='col-sm-4 spacer'>
+                  {schedules.filter((schedule) => schedule.reptileId === reptile.id).map((schedule) => (
+                    <div className='schedule' key={schedule.id}>
+                      {schedule.description}
+                    </div>
+                  ))}
+                </div>
+                <div className='col-sm-4 reptile-buttons'>
+                <button className='button' onClick={() => { handleDelete(reptile.id) }}>Delete</button>
+              </div> 
+              </div>
+          </div>
+          ))}
+        <div className='col-sm-12'>
+          <button className="button" onClick={handleCreateReptile}>Create Reptile</button>
         </div>
       </div>
-      {reptiles.map((reptile) => (
-        <div className='reptile' key={reptile.id}>
-          <div className='reptile-info'>
-            <div className='reptile-name'>
-              {reptile.name}
-
-            </div>
-            <div className='reptile-buttons'>
-              <button className="button"onClick={() => {handleSelect(reptile.id, reptile.name,reptile.sex,reptile.species)}}>Select</button>
-              <button className='button' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
-            </div>
-          </div>
-          <div className='schedule-row'>
-            {schedules.filter((schedule) => schedule.reptileId === reptile.id).map((schedule) => (
-              <div className='schedule' key={schedule.id}>
-                {schedule.description}
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-      <button className="button" onClick={handleCreateReptile}>Create Reptile</button>
     </div>
-  </div>
   );
 };
