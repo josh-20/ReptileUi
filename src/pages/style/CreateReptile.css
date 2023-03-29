@@ -1,11 +1,19 @@
 .container{
     background-color: #eee;
     height: 100vh;
+
+
     
 }
-.row{
+.adjuster{
     margin: 0 auto;
-    transform: translateY(-100px);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ddd;
+    margin-top: 150px;
+    border: solid 1px #242424;
+    box-shadow: 1px 1px 4px 1px #242424;
+    
 }
 .name-label{
     color: #242424;
@@ -39,9 +47,9 @@
     transition: .3s;
 }
 .species{
-    margin-top: 25px;
+    margin-top: 26px;
     border-radius: 5px;
-    padding: 5px;
+    padding: 2.5px;
 }
 .title{
     margin-bottom: 100px;

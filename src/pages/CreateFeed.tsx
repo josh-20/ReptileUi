@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style/routingStyle.css';
 
 
 export const CreateFeed = () => {
@@ -22,12 +23,14 @@ export const CreateFeed = () => {
         navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
     }
     return (
-        <div>
+        <div className="container">
             <label>
-                Feed
+                <h3>
+                    Feed
+                </h3>
                 <input onChange={e => setFoodItem(e.target.value)}/>
             </label>
-            <button onClick={handleSubmit}>Create</button>
+            <button className="button" onClick={handleSubmit}>Create</button>
         </div>
 
     )

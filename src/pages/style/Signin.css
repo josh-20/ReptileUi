@@ -1,5 +1,8 @@
 .signin-form {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 0px auto;
     background-color: #ddd;  
     color: #242424;
@@ -22,6 +25,7 @@
     color: #242424;
   }
   #email{
+
     margin-bottom: 10px;
   }
   #password{

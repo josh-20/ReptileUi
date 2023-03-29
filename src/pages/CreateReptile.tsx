@@ -35,7 +35,7 @@ export const CreateReptile = () => {
     return(
       
       <div className="container">
-        <div className="row">
+        <div className="row adjuster">
           <h1 className="title">Create a Reptile</h1>
           
           <label className="name-label col-xs-12 col-sm-6">
