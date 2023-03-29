@@ -1,29 +1,67 @@
 .dashboard-label {
-    color: #242424;
-  }
-  
-  #container {
-    border: #242424 1px solid;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 4px 1px #242424;
-    background-color: #ddd;
-    min-width: 70vw;
-    margin-bottom: 200px;
-  }
-  
-  
-  .reptile {
-    margin-bottom: 10px;
-    width: 100%;
-    border-bottom: #242424 solid 1px;
-  }
-  
-  
-  .schedule-row {
-    margin-bottom: 10px;
-  }
-  
-  .schedule {
-    margin-right: 10px;
-  }
+  color: #242424;
+}
+#container {
+  border: #242424 1px solid;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 1px #242424;
+  background-color: #ddd;
+  width: 90vw;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reptile {
+  margin-bottom: 10px;
+  width: 100%;
+  border-bottom: #242424 solid 1px;
+}
+.schedule {
+  margin-right: 10px;
+}
+.label-container #name-text{
+  text-align: left;
+  font-weight: bold;
+}
+.label-container #schedule-text{
+  text-align: center;
+  font-weight: bold;
+}
+.schedule{
+  text-align: center;
+}
+.reptile-buttons{
+  text-align: right;
+}
+.reptile-name{
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+.reptile-name:hover{
+  color: rgb(190,0,0);
+  text-decoration: underline;
+}
+.delete-button{
+  width: 50px; 
+  background-color: #eee;
+  color: #242424;
+  border-radius: 10px;
+  height: 30px;
+  border: 1px solid red;
+  box-shadow: 1px 1px 2px rgb(102, 0, 0);
+  font-weight: bold;
+}
+.delete-button:hover {
+  background-color: #ddd;
+  color: #242424;
+  box-shadow: 3px 3px 5px rgb(102, 0, 0);
+  transform: translateX(-1px) translateY(-2px);
+  transition: .3s;
+}
+.create-reptile{
+  text-align: center;
+}

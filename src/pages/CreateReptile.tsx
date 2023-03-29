@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import "./style/CreateReptile.css"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const CreateReptile = () => {
     const navigate = useNavigate();
@@ -37,16 +38,16 @@ export const CreateReptile = () => {
         <div className="row">
           <h1 className="title">Create a Reptile</h1>
           
-          <label className="col-xs-12 col-lg-3">
+          <label className="name-label col-xs-12 col-sm-6">
             <h4>Name</h4>
             <input className="name" value={name} onChange={e => setName(e.target.value)}/>
           </label>
-          <label className="col-xs-12 col-lg-3">
+          <label className="sex-label col-xs-12 col-sm-6">
             <h4>Gender</h4>
             <input className="sex" value={sex} onChange={e => setSex(e.target.value)} />
           </label>
-          <label className="col-xs-12 col-lg-3">
-            <select className="species" onChange={e => setSpecies(e.target.value)}>
+          <label className="dropdown-label col-sm-6">
+            <select className="species " onChange={e => setSpecies(e.target.value)}>
                 <option value="none" selected disabled hidden>Select</option>
                 <option value="ball_python">Ball Python</option>
                 <option value="king_snake">King Snake</option>
@@ -54,7 +55,7 @@ export const CreateReptile = () => {
                 <option value="redtail_boa">Redtail Boa</option>
             </select>
             </label>
-          <div className="col-xs-12 col-lg-3 button-ctn">
+          <div className="button-ctn col-sm-6">
             <button className="create-button" onClick={handleCreate}>Create</button>
           </div>
         </div>

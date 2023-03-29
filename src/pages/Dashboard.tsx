@@ -81,26 +81,24 @@ export const Dashboard = () => {
       <h1 className='dashboard-label'>Dashboard</h1>
       <div id='container'>
       <div className="label-container">
-        <div className='col-sm-6'>
+        <div className="col-sm-4"id="name-text">
           Name
         </div>
-        <div className='schedule col-sm-6'>
+        <div className="col-sm-4"id="schedule-text">
           Schedule
         </div>
-      </div>
+      
       {reptiles.map((reptile) => (
         <div className='reptile' key={reptile.id}>
           <div className='reptile-info'>
-            <div className='reptile-name'>
-              {reptile.name}
-
-            </div>
             <div className='reptile-buttons'>
-              <button className="button col-sm-3" onClick={() => {handleSelect(reptile.id, reptile.name,reptile.sex,reptile.species)}}>Select</button>
-              <button className='button col-sm-3' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
+              <button className='delete-button' onClick={() => {handleDelete(reptile.id)}}>Delete</button>
             </div>
           </div>
           <div className='schedule-row'>
+            <div className='reptile-name' onClick={() => {handleSelect(reptile.id, reptile.name,reptile.sex,reptile.species)}}>
+              {reptile.name }
+            </div>
             {schedules.filter((schedule) => schedule.reptileId === reptile.id).map((schedule) => (
               <div className='schedule' key={schedule.id}>
                 {schedule.description}
@@ -109,7 +107,10 @@ export const Dashboard = () => {
           </div>
         </div>
       ))}
-      <button className="button" onClick={handleCreateReptile}>Create Reptile</button>
+      </div>
+      <div className='create-reptile'>
+        <button className="button" onClick={handleCreateReptile}>Create Reptile</button>
+      </div>
     </div>
   </div>
   </div>
