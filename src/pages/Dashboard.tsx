@@ -79,7 +79,7 @@ export const Dashboard = () => {
       <div className='row border-design'>
         <h1 className='dashboard-label'>Dashboard</h1>
         <h5 className="col-sm-4 name-label">Reptile Name</h5>
-        <h5 className="col-sm-4 name-label">Schedule Name</h5>
+        <h5 className="col-sm-4 name-label" id="please">Schedule Name</h5>
         {reptiles.map((reptile) => (
           <div className='reptile' key={reptile.id}>
               <div className='row'>
