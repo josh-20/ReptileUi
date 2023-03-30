@@ -1,6 +1,11 @@
 .router-button{
     width: 170px;
     margin: 20px 10px 20px 10px;
+
+}
+.router-button-ctn{
+    padding-bottom: 200px;
+    padding-top: 50px;
 }
 h5{
     margin: 0px 20px 0px 20px;
@@ -22,4 +27,32 @@ h3{
 }
 #butt-on{
     margin-top: 25px;
+}
+#reptile-info{
+    margin-bottom: 50px;
+}
+.containment{
+    background-color: #ddd;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px 2px rgb(102, 0, 0);
+}
+.red{
+    color: red;
+}
+.husbandry-ctn{
+    height: 300px;
+    border-bottom: 1px solid #242424;
+    margin-bottom: 10px;
+}
+@media(min-width: 576px){
+    .husbandry-ctn{
+        height: 500px;
+    }
+}
+@media(min-width:992px){
+    .husbandry-ctn{
+        height: 300px;
+    }
 }
