@@ -81,94 +81,110 @@ export const Reptile = () => {
     },[husbandrys])
 return(
   <div className="container styling">
-    <h1>Reptile Info</h1>
-    <div className="row containment">
-      {
-        husbandrys?.map((husbandry) => (
-          <div key={husbandry.id}>
-            <h3>
-              Humidity: {husbandry.humidity}
-            </h3>
-            <h3>
-              length: {husbandry.length} 
-            </h3>
-            <h3>
-              Temperature: {husbandry.temperature} 
-            </h3>
-            <h3>
-              Weight: {husbandry.weight} 
-            </h3>
-          </div>
-        ))
-      }
-    </div>
-    <div>
-      {
-        schedules?.map((schedule) => (
-          <div key={schedule.id}>
-            <h3 className="schedule-label">
-            Schedule: {schedule.description}
-            </h3>
-            <label>
-              <h5>
-                Monday
-              </h5>
-              <input type="checkbox" checked={schedule.monday} disabled/>
-            </label>
-            <label>
-              <h5>
-                Tuesday
-              </h5>
-              <input type="checkbox" checked={schedule.tuesday} disabled/>
-            </label>
-            <label>
-              <h5>
-                Wednesday
-              </h5>
-              <input type="checkbox" checked={schedule.wednesday} disabled/>
-            </label>
-            <label>
-              <h5>
-                Thursday
-              </h5>
-              <input type="checkbox" checked={schedule.thursday} disabled/>
-            </label>
-            <label>
-              <h5>
-                Friday
-              </h5>
-              <input type="checkbox" checked={schedule.friday}  disabled/>
-            </label>
-            <label>
-              <h5>
-                Saturday
-              </h5>
-              <input type="checkbox" checked={schedule.saturday} disabled/>
-            </label>
-            <label>
-              <h5>
-                Sunday
-              </h5>
-              <input type="checkbox" checked={schedule.sunday} disabled/>
-            </label>
-          </div>
-        ))
-      }
-      </div>
-      <div>
+    <h1 id="reptile-info">Reptile Info</h1>
+    <div className="row">
+      <div className="containment col-sm-4">
         {
-          feeds?.map((feed) => (
-            <div key={feed.id}>
-              <h5 className="feed-label">
-              Feed: {feed.foodItem}
-              </h5>
+          husbandrys?.map((husbandry) => (
+            <div key={husbandry.id} className="col-sm-12" id="husbandry-padder ">
+              <div className="husbandry-ctn">
+                <h4 className="red">
+                  Husbandry: 
+                </h4>
+                <h5>
+                  Humidity: {husbandry.humidity}
+                </h5>
+                <h5>
+                  length: {husbandry.length} 
+                </h5>
+                <h5>
+                  Temperature: {husbandry.temperature} 
+                </h5>
+                <h5>
+                  Weight: {husbandry.weight} 
+                </h5>
+              </div>
             </div>
           ))
         }
       </div>
-      <button className="button router-button col-xs-12" onClick={handleCreateHusbandry}>Create Husbandry</button>
-      <button className="button router-button col-xs-12" onClick={handleCreateSchedule}>Create Schedule</button>
-      <button className="button router-button col-xs-12" onClick={handleCreateFeed}>Create Feeding</button>
+      <div className="col-sm-4 containment">
+        {
+          schedules?.map((schedule) => (
+            <div key={schedule.id} className="col-sm-12">
+              <div className="husbandry-ctn">
+                <h4 className="red">Schedule: </h4>
+                <h5 className="schedule-label">
+                  {schedule.description}
+                </h5>
+                <label>
+                  <h5>
+                    Monday
+                  </h5>
+                  <input type="checkbox" checked={schedule.monday} disabled/>
+                </label>
+                <label>
+                  <h5>
+                    Tuesday
+                  </h5>
+                  <input type="checkbox" checked={schedule.tuesday} disabled/>
+                </label>
+                <label>
+                  <h5>
+                    Wednesday
+                  </h5>
+                  <input type="checkbox" checked={schedule.wednesday} disabled/>
+                </label>
+                <label>
+                  <h5>
+                    Thursday
+                  </h5>
+                  <input type="checkbox" checked={schedule.thursday} disabled/>
+                </label>
+                <label>
+                  <h5>
+                    Friday
+                  </h5>
+                  <input type="checkbox" checked={schedule.friday}  disabled/>
+                </label>
+                <label>
+                  <h5>
+                    Saturday
+                  </h5>
+                  <input type="checkbox" checked={schedule.saturday} disabled/>
+                </label>
+                <label>
+                  <h5>
+                    Sunday
+                  </h5>
+                  <input type="checkbox" checked={schedule.sunday} disabled/>
+                </label>
+              </div>
+            </div>
+          )) 
+        }
+      </div>
+      <div className="col-sm-4 containment">
+        {
+          feeds?.map((feed) => (
+            <div key={feed.id} className="col-sm-12">
+              <div className="husbandry-ctn">
+                <h4 className="red">Feeding:</h4>
+                <h5 className="feed-label">
+                  {feed.foodItem}
+                </h5>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <div className="col-sm-12 router-button-ctn">
+        <button className="button router-button col-xs-12" onClick={handleCreateHusbandry}>Create Husbandry</button>
+        <button className="button router-button col-xs-12" onClick={handleCreateSchedule}>Create Schedule</button>
+        <button className="button router-button col-xs-12" onClick={handleCreateFeed}>Create Feeding</button>
+      </div>
     </div>
+  </div>
+
   )
 }
