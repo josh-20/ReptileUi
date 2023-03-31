@@ -82,7 +82,15 @@ export const Reptile = () => {
     },[])
 return(
   <div className="container styling">
+    
     <h1 id="reptile-info">Reptile Info</h1>
+    <div className="row">
+      <div className="col-sm-12">
+        <h6 className="red">Name: {name?.toUpperCase()}</h6>
+        <h6 className="red">Gender: {sex?.toUpperCase()}</h6>
+        <h6 className="red">Species: {species?.replace("_", " ").toUpperCase()} </h6>
+      </div>
+    </div>
     <div className="row">
       <div className="containment col-sm-4">
         {
