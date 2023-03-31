@@ -22,7 +22,7 @@ export const CreateUser = () => {
         password
       })
     });
-    navigate("/signin"); 
+    navigate("/"); 
   }
 
   return(

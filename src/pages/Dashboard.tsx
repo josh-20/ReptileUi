@@ -61,7 +61,7 @@ export const Dashboard = () => {
 
       const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
       if (resRep.status == 401){
-        navigate("/signin");
+        navigate("/");
         return;
       }else{
         const {reptiles} = await resRep.json();

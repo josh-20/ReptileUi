@@ -36,7 +36,7 @@ export const CreateScheduleRep = () => {
             })
         });
         if (res.status != 200){
-          navigate("/signin");
+          navigate("/");
           return
         }
         navigate(`/reptile/${id}/${name}/${sex}/${species}`);

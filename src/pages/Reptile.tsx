@@ -55,7 +55,7 @@ export const Reptile = () => {
                 // make request for Husbandry
                 const resHusbandry = await fetch(`${import.meta.env.VITE_SERVER_URL}/husbandry?id=${id}`);
                 if(resHusbandry.status != 200){
-                    navigate("/signin");
+                    navigate("/");
                     return;
                 }
                 const {husbandry} = await resHusbandry.json();

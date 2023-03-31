@@ -23,7 +23,7 @@ export const CreateReptile = () => {
             })
         });
         if (res.status != 200){
-            navigate("/signin");
+            navigate("/");
             return
         }
         res.json();

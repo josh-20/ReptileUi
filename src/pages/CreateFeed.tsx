@@ -21,10 +21,10 @@ export const CreateFeed = () => {
             })
         })
         if(res.status != 200){
-            navigate("/signin");
-            return
+            navigate("/");
+            return;
         }
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`);
+        navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
     }
     return (
         <div className="container">
