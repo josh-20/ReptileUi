@@ -53,7 +53,7 @@ export const Dashboard = () => {
   }
 
   function handleUpdate(id: number, name: string, sex: string, species: string){
-    navigate(`/updateRep/${id}/${name}${sex}${species}`)
+    navigate(`/updateRep/${id}/${name}/${sex}/${species}`)
   }
 
 
@@ -104,7 +104,7 @@ export const Dashboard = () => {
                 </div>
                 <div className='col-sm-4 reptile-buttons'>
                 <button className='button' onClick={() => { handleDelete(reptile.id) }}>Delete</button>
-                <button className='button' onClick={() => {handleUpdate(reptile.id, reptile.name, reptile.sex, reptile.species)}}> </button>
+                <button className='button' onClick={() => {handleUpdate(reptile.id, reptile.name, reptile.sex, reptile.species)}}>Update</button>
               </div> 
               </div>
           </div>
