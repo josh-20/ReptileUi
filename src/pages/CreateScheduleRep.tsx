@@ -40,10 +40,9 @@ export const CreateScheduleRep = () => {
     }
     return (
         <div className="container">
-          <div className="row">
-          </div>
-          <div className="row">
-            <div className="col-xs-12 col-sm-4 col-lg-2">
+          <div className="schedule-ctn">
+          <div className="row ">
+            <div className="col-xs-12 col-sm-4 col-lg-1">
               <label>
                 <h5>Monday</h5>
                 <input type="checkbox" defaultChecked={monday} onChange={() => {setMonday(!monday)}}/>
@@ -61,7 +60,7 @@ export const CreateScheduleRep = () => {
                 <input type="checkbox" defaultChecked={wednesday} onChange={() => {setWednesday(!wednesday)}}/>
               </label>
             </div>
-            <div className="col-xs-12 col-sm-4 col-lg-1">
+            <div className="col-xs-12 col-sm-4 col-lg-2">
               <label>
                 <h5>Thursday</h5>
                 <input type="checkbox" defaultChecked={thursday} onChange={() => {setThursday(!thursday)}}/>
@@ -88,7 +87,8 @@ export const CreateScheduleRep = () => {
           </div>
           <div className="row">
             <div className="col-sm-4">
-              <select id="butt-on" onChange={e => setType(e.target.value)}>
+              <h5 className="service">Service</h5>
+              <select onChange={e => setType(e.target.value)}>
                 <option value="none" selected disabled hidden>Select</option>
                 <option value="feed">Feed</option>
                 <option value="record">Record</option>
@@ -97,13 +97,14 @@ export const CreateScheduleRep = () => {
             </div>
             <div className="col-sm-4">
               <div className="form-group">
-                <label htmlFor="description">Description</label>
+                <label id="desc" htmlFor="description">Description</label>
                 <input type="text" className="form-control" id="description" onChange={e => setDescription(e.target.value)} />
               </div>
             </div>
             <div className="col-sm-4">
               <button className="button" id="butt-on" onClick={handleSubmit}>Create Schedule</button>
             </div>
+          </div>
           </div>
         </div>
       );
