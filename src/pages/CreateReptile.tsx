@@ -26,8 +26,9 @@ export const CreateReptile = () => {
             navigate("/");
             return
         }
-        res.json();
-        navigate("/dash");
+        res.status
+        navigate("/dash" , {replace: true});
+        return
     }
 
 

@@ -13,6 +13,7 @@ import { CreateScheduleRep } from "./pages/CreateScheduleRep";
 import { CreateHusbandry } from "./pages/CreateHusbandry";
 import { CreateFeed } from "./pages/CreateFeed";
 import { useState } from "react";
+import { UpdateRep } from "./pages/UpdateRep";
 
 const router = createBrowserRouter([
 
@@ -81,7 +82,11 @@ const router = createBrowserRouter([
     {
       path: "/createFeed/:id/:name/:sex/:species",
       element: <CreateFeed/>
-    }]
+    },
+  {
+    path: "/updateRep/:id/:name/:sex/:species",
+    element: <UpdateRep />
+  }]
   },
 
 

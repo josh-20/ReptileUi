@@ -52,6 +52,10 @@ export const Dashboard = () => {
     navigate("/createRep")
   }
 
+  function handleUpdate(id: number, name: string, sex: string, species: string){
+    navigate(`/updateRep/${id}/${name}${sex}${species}`)
+  }
+
 
   useEffect(() => {
     const fetchAll = async () => {
@@ -73,6 +77,11 @@ export const Dashboard = () => {
       }
     }
     fetchAll();
+    return ()=>{
+      setReptiles([]);
+      setSchedules([]);
+
+    }
   },[])
   return (
     <div className='container'>
@@ -95,6 +104,7 @@ export const Dashboard = () => {
                 </div>
                 <div className='col-sm-4 reptile-buttons'>
                 <button className='button' onClick={() => { handleDelete(reptile.id) }}>Delete</button>
+                <button className='button' onClick={() => {handleUpdate(reptile.id, reptile.name, reptile.sex, reptile.species)}}> </button>
               </div> 
               </div>
           </div>

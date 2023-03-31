@@ -40,6 +40,7 @@ export const CreateScheduleRep = () => {
           return
         }
         navigate(-1);
+        return 
     }
     return (
         <div className="container">

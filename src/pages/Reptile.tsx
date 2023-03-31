@@ -53,31 +53,32 @@ export const Reptile = () => {
     }
 
     useEffect(() => {
-        try {
-            async function fetchAll() {
-                // make request for Husbandry
-                const resHusbandry = await fetch(`${import.meta.env.VITE_SERVER_URL}/husbandry?id=${id}`);
-                if(resHusbandry.status != 200){
-                    navigate("/");
-                    return;
-                }
-                const {husbandry} = await resHusbandry.json();
-                setHusbandrys(husbandry);
-
-                // make request for schedules
-                const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/schedulerep?reptileId=${id}`);
-                const{schedules}= await resSchedule.json();
-                setSchedules(schedules);
-
-                //make request for feed
-                const resFeed = await fetch(`${import.meta.env.VITE_SERVER_URL}/feed?id=${id}`);
-                const {feedings} = await resFeed.json();
-                setFeeds(feedings);
+        async function fetchAll() {
+            // make request for Husbandry
+            const resHusbandry = await fetch(`${import.meta.env.VITE_SERVER_URL}/husbandry?id=${id}`);
+            if(resHusbandry.status != 200){
+                navigate("/");
+                return;
             }
-                fetchAll();
-        } catch (error) {
-            console.log(error);        
+            const {husbandry} = await resHusbandry.json();
+            setHusbandrys(husbandry);
+
+            // make request for schedules
+            const resSchedule = await fetch(`${import.meta.env.VITE_SERVER_URL}/schedulerep?reptileId=${id}`);
+            const{schedules}= await resSchedule.json();
+            setSchedules(schedules);
+
+            //make request for feed
+            const resFeed = await fetch(`${import.meta.env.VITE_SERVER_URL}/feed?id=${id}`);
+            const {feedings} = await resFeed.json();
+            setFeeds(feedings);
         }
+      fetchAll();
+      return () => {
+        setHusbandrys([]);
+        setSchedules([]);
+        setFeeds([]);
+      }
     },[])
 return(
   <div className="container styling">
