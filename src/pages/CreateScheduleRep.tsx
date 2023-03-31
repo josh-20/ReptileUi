@@ -39,7 +39,7 @@ export const CreateScheduleRep = () => {
           navigate("/");
           return
         }
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`);
+        navigate(-1);
     }
     return (
         <div className="container">

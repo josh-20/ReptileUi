@@ -28,7 +28,8 @@ export const CreateHusbandry = () => {
             navigate("/");
             return
         }
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`)
+        res.json();
+        navigate(-1);
     }
 
     return(

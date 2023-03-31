@@ -24,7 +24,7 @@ export const CreateFeed = () => {
             navigate("/");
             return;
         }
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
+        navigate(-1);
     }
     return (
         <div className="container">
