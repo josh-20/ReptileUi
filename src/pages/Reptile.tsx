@@ -48,6 +48,9 @@ export const Reptile = () => {
     function handleCreateFeed () {
         navigate(`/createFeed/${id}/${name}/${sex}/${species}`, {replace: true});
     }
+    function returnToDash () {
+        navigate("/dash", {replace: true});
+    }
 
     useEffect(() => {
         try {
@@ -178,10 +181,11 @@ return(
           ))
         }
       </div>
-      <div className="col-sm-12 router-button-ctn">
+      <div className="router-button-ctn">
         <button className="button router-button col-xs-12" onClick={handleCreateHusbandry}>Create Husbandry</button>
         <button className="button router-button col-xs-12" onClick={handleCreateSchedule}>Create Schedule</button>
         <button className="button router-button col-xs-12" onClick={handleCreateFeed}>Create Feeding</button>
+        <button className="button router-button col-xs-12" onClick={returnToDash}>To Dashboard</button>
       </div>
     </div>
   </div>
