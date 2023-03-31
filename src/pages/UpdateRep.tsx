@@ -4,26 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 export const UpdateRep = () => {
   const navigate = useNavigate();
-  const {id, name , sex, species} = useParams();
-  const [newName, setNewName] = useState("");
-  const [newGender, setNewGender] = useState("");
-  const [newSpecies, setNewSpecies] = useState("");
+  const {idC, nameC , sexC, speciesC} = useParams();
+  const [name, setNewName] = useState(nameC);
+  const [sex, setNewGender] = useState(sexC);
+  const [species, setNewSpecies] = useState(speciesC);
     
 
   async function handleUpdate () {
-    console.log(newSpecies)
-    console.log(species)
-    const res = await fetch (`${import.meta.env.VITE_SURVER_URL}/uprep?id=${id}`, {
-        method: "put",
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/uprep?id=${idC}`, {
+        method: "post",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            newName,
-            newGender,
-            newSpecies,
+            name,
+            sex,
+            species,
         })
     });
+    console.log(res);
     if(res.status != 200){
       navigate("/");
       return;
@@ -34,11 +33,6 @@ export const UpdateRep = () => {
 
   }
 
-  useEffect(() => {
-    setNewName(newName);
-    setNewGender(newGender);
-    setNewSpecies(newSpecies);
-  },[])
 
 
   return(
@@ -48,14 +42,14 @@ export const UpdateRep = () => {
         
         <label className="name-label col-xs-12 col-sm-6">
           <h4>Name</h4>
-          <input className="name" value={newName} onChange={e => setNewName(e.target.value)}/>
+          <input className="name" value={name} onChange={e => setNewName(e.target.value)}/>
         </label>
         <label className="sex-label col-xs-12 col-sm-6">
           <h4>Gender</h4>
-          <input className="sex" value={newGender} onChange={e => setNewGender(e.target.value)} />
+          <input className="sex" value={sex} onChange={e => setNewGender(e.target.value)} />
         </label>
         <label className="dropdown-label col-sm-6">
-        <select className="species " onChange={e => setNewSpecies(e.target.value)} defaultValue="none" >
+        <select value={species} className="species " onChange={e => setNewSpecies(e.target.value)} defaultValue="none" >
           <option value="none" disabled hidden>Select</option>
           <option value="ball_python">Ball Python</option>
           <option value="king_snake">King Snake</option>

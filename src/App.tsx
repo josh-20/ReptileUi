@@ -84,7 +84,7 @@ const router = createBrowserRouter([
       element: <CreateFeed/>
     },
   {
-    path: "/updateRep/:id/:name/:sex/:species",
+    path: "/updateRep/:idC/:nameC/:sexC/:speciesC",
     element: <UpdateRep />
   }]
   },

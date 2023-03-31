@@ -52,8 +52,8 @@ export const Dashboard = () => {
     navigate("/createRep")
   }
 
-  function handleUpdate(id: number, name: string, sex: string, species: string){
-    navigate(`/updateRep/${id}/${name}/${sex}/${species}`)
+  function handleUpdate(idC: number, nameC: string, sexC: string, speciesC: string){
+    navigate(`/updateRep/${idC}/${nameC}/${sexC}/${speciesC}`)
   }
 
 
