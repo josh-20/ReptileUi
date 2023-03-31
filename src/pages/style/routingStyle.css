@@ -25,7 +25,21 @@ h3{
 #schedule-container{
     margin: 20px 20px 20px 20px;
 }
+.service{
+    margin-top: 25px;
+}
+.schedule-ctn{
+    background-color: #ddd;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 150px;
+    box-shadow: 1px 1px 2px rgb(102, 0, 0);
+}
 #butt-on{
+    margin-top: 55px;
+}
+#desc{
     margin-top: 25px;
 }
 #reptile-info{

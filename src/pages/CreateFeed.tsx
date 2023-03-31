@@ -24,13 +24,15 @@ export const CreateFeed = () => {
     }
     return (
         <div className="container">
-            <label>
-                <h3>
-                    Feed
-                </h3>
-                <input onChange={e => setFoodItem(e.target.value)}/>
-            </label>
+            <div className="schedule-ctn">
+                <label>
+                    <h3>
+                        Feed
+                    </h3>
+                    <input onChange={e => setFoodItem(e.target.value)}/>
+                </label>
             <button className="button" onClick={handleSubmit}>Create</button>
+            </div>
         </div>
 
     )
