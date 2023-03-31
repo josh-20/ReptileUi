@@ -19,7 +19,7 @@ export const SignIn = () => {
                 password
             })
         });
-        navigate("/dash", {replace: true})
+        navigate("/dash")
     }
     return(
         <div className="container">

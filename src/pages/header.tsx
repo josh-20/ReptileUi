@@ -6,7 +6,7 @@ export const Header = () => {
     await fetch(`${import.meta.env.VITE_SERVER_URL}/logout`, {
       method: "post"
     });
-    navigate("/signin", {replace: true})
+    navigate("/signin")
   }
     return(
     <div id="header-ctn">

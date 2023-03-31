@@ -10,7 +10,7 @@ export const CreateUser = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   async function saveUser() {
-    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/`, {
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/createUser`, {
       method: "post",
       headers: {
         "Content-Type": "application/json"
@@ -22,7 +22,7 @@ export const CreateUser = () => {
         password
       })
     });
-    navigate("/signin",{replace: true}); 
+    navigate("/signin"); 
   }
 
   return(

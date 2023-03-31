@@ -20,7 +20,11 @@ export const CreateFeed = () => {
                 foodItem
             })
         })
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
+        if(res.status != 200){
+            navigate("/signin");
+            return
+        }
+        navigate(`/reptile/${id}/${name}/${sex}/${species}`);
     }
     return (
         <div className="container">

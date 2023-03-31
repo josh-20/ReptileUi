@@ -23,11 +23,11 @@ export const CreateReptile = () => {
             })
         });
         if (res.status != 200){
-            navigate("/signin", {replace: true});
+            navigate("/signin");
             return
         }
         res.json();
-        navigate("/dash",{replace: true});
+        navigate("/dash");
     }
 
 

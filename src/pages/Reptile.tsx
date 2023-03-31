@@ -38,15 +38,15 @@ export const Reptile = () => {
 
 
     function handleCreateHusbandry() {
-        navigate(`/createHusbandry/${id}/${name}/${sex}/${species}`,{replace:true})
+        navigate(`/createHusbandry/${id}/${name}/${sex}/${species}`)
 
     }
     function handleCreateSchedule () {
-        navigate(`/createScheduleRep/${id}/${name}/${sex}/${species}`, {replace: true})
+        navigate(`/createScheduleRep/${id}/${name}/${sex}/${species}`)
 
     }
     function handleCreateFeed () {
-        navigate(`/createFeed/${id}/${name}/${sex}/${species}`, {replace: true});
+        navigate(`/createFeed/${id}/${name}/${sex}/${species}`);
     }
 
     useEffect(() => {
@@ -55,7 +55,7 @@ export const Reptile = () => {
                 // make request for Husbandry
                 const resHusbandry = await fetch(`${import.meta.env.VITE_SERVER_URL}/husbandry?id=${id}`);
                 if(resHusbandry.status != 200){
-                    navigate("/signin", {replace: true});
+                    navigate("/signin");
                     return;
                 }
                 const {husbandry} = await resHusbandry.json();
@@ -76,9 +76,6 @@ export const Reptile = () => {
             console.log(error);        
         }
     },[])
-    useEffect(() => {
-        console.log(husbandrys)
-    },[husbandrys])
 return(
   <div className="container styling">
     <h1 id="reptile-info">Reptile Info</h1>

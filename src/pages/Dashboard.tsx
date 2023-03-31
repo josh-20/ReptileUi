@@ -45,11 +45,11 @@ export const Dashboard = () => {
     setSchedules([...schedules]);
   }
   function handleSelect(id: number, name: string, sex: string, species: string) {
-    navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
+    navigate(`/reptile/${id}/${name}/${sex}/${species}`);
   }
 // create Reptile
   async function handleCreateReptile() {
-    navigate("/createRep", {replace:true})
+    navigate("/createRep")
   }
 
 
@@ -60,8 +60,8 @@ export const Dashboard = () => {
       let dayofWeek = weekday[d.getDay()];
 
       const resRep = await fetch(`${import.meta.env.VITE_SERVER_URL}/reptile`);
-      if (resRep.status != 200){
-        navigate("/signin", {replace: true});
+      if (resRep.status == 401){
+        navigate("/signin");
         return;
       }else{
         const {reptiles} = await resRep.json();

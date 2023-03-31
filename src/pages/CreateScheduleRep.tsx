@@ -18,7 +18,6 @@ export const CreateScheduleRep = () => {
     
 
     async function handleSubmit() {
-        console.log(description)
         const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/schedulerep?reptileId=${id}`, {
             method: "post",
             headers: {
@@ -36,7 +35,11 @@ export const CreateScheduleRep = () => {
                 sunday
             })
         });
-        navigate(`/reptile/${id}/${name}/${sex}/${species}`, {replace: true});
+        if (res.status != 200){
+          navigate("/signin");
+          return
+        }
+        navigate(`/reptile/${id}/${name}/${sex}/${species}`);
     }
     return (
         <div className="container">
